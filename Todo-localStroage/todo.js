@@ -81,7 +81,17 @@ var bindRemove = function() {
         }
     })
 }
-
+var bindUpdate = function() {
+    var t_box = e('.todo-container')
+    t_box.addEventListener('click', function(event) {
+        var self = event.target
+        if (self.classList.contains('todo-item-complete')) {
+            // log('remove')
+            var item = self.closest('.todo-item')
+            item.classList.toggle('done')
+        }
+    })
+}
 
 /*
 main程序
@@ -89,6 +99,7 @@ main程序
 var bindBtns = function() {
     bindAdd()
     bindRemove()
+    bindUpdate()
 }
 var main = function() {
     bindBtns()
