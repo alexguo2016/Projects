@@ -8,3 +8,7 @@ var t_find = function(element, str) {
 var t_findAll = function(element, str) {
     return element.querySelectorAll(str)
 }
+
+// var test_getInput = function() {
+//     log('getInputText()-->', getInputText())
+// }
