@@ -1,15 +1,16 @@
 /*
 1、在输入框输入文本之后，按add可以创建一条todo
 */
-var todoList = []
+var todos = []
 var todo = function(text) {
     var o = {}
     o.text = text
-    if (todoList[todoList.length - 1] == undefined) {
+    if (todos[todos.length - 1] == undefined) {
         o.id = 0
     } else {
-        o.id = todoList[todoList.length - 1].id + 1
+        o.id = todos[todos.length - 1].id + 1
     }
+    log('todo-->', o)
     return o
 }
 var createTodo = function() {
@@ -35,8 +36,14 @@ var insertTodo = function(todo) {
     `
     items.insertAdjacentHTML('beforeend', html)
 }
+var insertTodos = function(ts) {
+    // log('ts',ts)
+    for (var i = 0; i < ts.length; i++) {
+        insertTodo(ts[i])
+    }
+}
 var saveToList = function(element) {
-    todoList.push(element)
+    todos.push(element)
 }
 /*
 2、todo可以被删除
@@ -55,8 +62,12 @@ var saveToList = function(element) {
 // var findTodo = function(id) {
 //     return e('#id')
 // }
-
-
+/*
+第一次启动时候加载页面
+*/
+var showTodos = function() {
+    insertTodos(todos)
+}
 /*
 button  listeners
 */
@@ -67,6 +78,7 @@ var bindAdd = function() {
         if (self.classList.contains('addBtn')) {
             // log('add')
             createTodo()
+            saveTols()
         }
     })
 }
@@ -77,9 +89,19 @@ var bindRemove = function() {
         if (self.classList.contains('todo-item-delete')) {
             // log('remove')
             var item = self.closest('.todo-item')
+            var id = item.dataset.id
             item.remove()
+            deleteIntodos(id)
         }
     })
+}
+var deleteIntodos = function(id) {
+    for (var i = 0; i < todos.length; i++) {
+        if (todos[i].id == id) {
+            todos.splice(i, 1)
+        }
+    }
+    saveTols()
 }
 var bindUpdate = function() {
     var t_box = e('.todo-container')
@@ -92,7 +114,22 @@ var bindUpdate = function() {
         }
     })
 }
-
+/*
+localStorage相关
+*/
+//判断有没有缓存，没有则创建一个localStorage
+var ls = function() {
+    if (!localStorage.getItem('todoList')) {
+        localStorage.setItem('todoList', '')
+    } else {
+        data = localStorage.getItem('todoList')
+        todos = JSON.parse(data)
+    }
+}
+var saveTols = function() {
+    var data = JSON.stringify(todos)
+    localStorage.setItem('todoList', data);
+}
 /*
 main程序
 */
@@ -102,6 +139,8 @@ var bindBtns = function() {
     bindUpdate()
 }
 var main = function() {
+    ls()
+    showTodos()
     bindBtns()
 }
 main()
