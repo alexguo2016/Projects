@@ -1,0 +1,31 @@
+似乎需要使用jsonp来传递数据，服务器上面并不允许跨域
+XMLHttpRequest cannot load http://api.avatardata.cn/MingRenMingYan/Random?key=.... No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'null' is therefore not allowed access.
+
+"""二、解决方案
+
+常用的解决方案有两种，可以分为客户端解决方案和服务器端解决方案。先说服务器端解决方案：
+
+服务器端解决方案
+在服务器端的filter或者servlet里面添加
+response.setHeader("Access-Control-Allow-Origin", "*");
+“Access-Control-Allow-Origin”表示允许跨域访问，“*”表示允许所有来源进行跨域访问，这里也可以替换为特定的域名或ip。
+很显然，这种方式对非网站拥有人员来说是不能做到的。而且此种方式很容易受到CSRF攻击。
+
+客户端解决方案
+
+$(function($){
+      var url = 'http://*****/index';
+      $.ajax(url, {
+        data: {
+          'cityname': '成都',
+          'date': '2016.12.12'
+        },
+        dataType: 'jsonp',
+        crossDomain: true,
+        success: function(data) {
+          if(data && data.resultcode == '200'){
+            console.log(data.result.today);
+          }
+        }
+      });
+将ajax请求中的dataType属性设置为“jsonp”，jsonp是专门用来解决跨域访问而诞生的。"""
