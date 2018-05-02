@@ -4,10 +4,124 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>使用echarts实现一个记账页面</title>
+        <link rel="stylesheet" href="css/init.css">
+        <link rel="stylesheet" href="css/position.css">
+        <link rel="stylesheet" href="css/fonts.css">
         <link rel="stylesheet" href="css/m.css">
         <script src="js/echarts.min.js" charset="utf-8"></script>
     </head>
     <body>
-        
+        <div class="header text-normal">
+            <div class="header-setting item-flex-parent item-flex-space-between">
+                <div class="header-date">
+                    <span class = 'month text-red text-bigger'>5</span>/<span class = 'year text-normal'>2018</span>
+                </div>
+                <div class="header-btns item-right">
+                    <button type="button" class = 'hongbao'>
+                        <img src="imgs/hongbao.png" alt="">
+                    </button>
+                    <button type="button" class = 'more'>
+                        <img src="imgs/more.png" alt="">
+                    </button>
+                </div>
+            </div>
+            <div id="header-thismonth-income" class = 'monthly-info item-flex-parent item-flex-space-between'>
+                <span >本月收入</span><span>￥0.00 &gt;</span>
+            </div>
+            <div id="header-thismonth-spent" class = 'monthly-info item-flex-parent item-flex-space-between'>
+                <span>本月支出</span><span>￥0.00 &gt;</span>
+            </div>
+            <div id="header-budget" class = 'monthly-info item-flex-parent item-flex-space-between'>
+                <span>预算</span><span class = 'text-gold'>未设预算，点此设置 &gt;</span>
+            </div>
+        </div>
+        <div class="m-createnote item-parent">
+            <button type="button" name="button" class = 'm-createnote-button item-inline item-center-vertical'>
+                <span class = 'm-c-text'>记一笔</span>
+            </button>
+        </div>
+        <div class="m-loggers">
+            <ul class = 'text-normal'>
+                <li class = 'm-loggers-item item-flex-parent item-flex-space-between item-parent'>
+                    <span class = 'item-vertical'>
+                        <span class = 'item-block'>今天</span>
+                        <span class = 'item-block text-smaller text-grey'>还没有记账</span>
+                    </span>
+                    <span class = 'item-vertical item-right'>
+                        <span class = 'item-block text-smaller-red'>0.00</span>
+                        <span class = 'item-block text-smaller-green'>0.00</span>
+                    </span>
+                </li>
+                <li class = 'm-loggers-item item-flex-parent item-flex-space-between item-parent'>
+                    <span class = 'item-vertical'>
+                        <span class = 'item-block'>本周</span>
+                        <span class = 'item-block text-smaller text-grey'>04月30日-05月06日</span>
+                    </span>
+                    <span class = 'item-vertical item-right'>
+                        <span class = 'item-block text-smaller-red'>0.00</span>
+                        <span class = 'item-block text-smaller-green'>0.00</span>
+                    </span>
+                </li>
+                <li class = 'm-loggers-item item-flex-parent item-flex-space-between item-parent'>
+                    <span class = 'item-vertical'>
+                        <span class = 'item-block'>本月</span>
+                        <span class = 'item-block text-smaller text-grey'>05月01日-05月31日</span>
+                    </span>
+                    <span class = 'item-vertical item-right'>
+                        <span class = 'item-block text-smaller-red'>0.00</span>
+                        <span class = 'item-block text-smaller-green'>0.00</span>
+                    </span>
+                </li>
+                <li class = 'm-loggers-item item-flex-parent item-flex-space-between item-parent'>
+                    <span class = 'item-vertical'>
+                        <span class = 'item-block'>社区</span>
+                        <span class = 'item-block text-smaller text-grey'>记账999天，5点经验分享给你</span>
+                    </span>
+                    <span class = 'item-vertical item-right'>
+                        <span class = 'item-block text-smaller text-gold'>签到分现金</span>
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class = 'footer-btns item-flex-parent item-flex-space-around'>
+                <li class = 'footer-btn'>
+                    <button type="button" name="button" class = 'm-footer-goto'>
+                        <img src="imgs/goto.png" alt="">
+                    </button>
+                </li>
+                <li class = 'footer-btn'>
+                    <button type="button" name="button" class = 'm-footer-liushui'>
+                        <!-- <img src="imgs/liushui.png" alt=""> -->
+                        流水
+                    </button>
+                </li>
+                <li class = 'footer-btn'>
+                    <button type="button" name="button">
+                        <img src="imgs/zhanghu.png" alt="">
+                        账户
+                    </button>
+                </li>
+                <li class = 'footer-btn'>
+                    <button type="button" name="button">
+                        <img src="imgs/quanyi.png" alt="">
+                        权益
+                    </button>
+                </li>
+                <li class = 'footer-btn'>
+                    <button type="button" name="button">
+                        <img src="imgs/touzi.png" alt="">
+                        投资
+                    </button>
+                </li>
+                <li class = 'footer-btn'>
+                    <button type="button" name="button">
+                        <img src="imgs/gengduo.png" alt="">
+                        更多
+                    </button>
+                </li>
+
+            </ul>
+        </div>
     </body>
 </html>
