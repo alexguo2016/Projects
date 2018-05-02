@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ccc;
+}
+.m-input {
+    /* width: 60vw; */
+    height: 10vw;
+    background-color: red;
+}
+.m-show {
+    /* width: 60vw; */
+    height: 40vw;
+    background-color: lightblue;
+}
