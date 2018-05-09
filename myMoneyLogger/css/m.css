@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* font-size: 24px; */
+    background-color: #ccc;
+}
+.header {
+    width: 100vw;
+    height: 30vw;
+    padding-left: 10vw;
+    background-color: lightyellow;
+}
+.m-createnote {
+    width: 100vw;
+    height: 10vw;
+    text-align: center;
+    background-color: #ddd;
+}
+.m-createnote-button {
+    width: 80vw;
+    height: 8vw;
+    font-size: 5vw;
+    font-weight: bold;
+    line-height: 8vw;
+    color: white;
+    background-color: orange;
+    border-radius: 10px;
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    width: 100vw;
+    height: 10vw;
+    font-size: 16px;
+    color: white;
+    background-color: #777;
+}
+.m-footer-liushui {
+    background-image: url('../imgs/liushui.png');
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-position:center;
+}
+.monthly-info {
+    width: 70vw;
+}
+.m-loggers-item {
+    width: 100vw;
+    height: 10vw;
+    margin-left: 10vw;
+    margin-right:0;
+    /* padding-left: 10vw;
+    padding-right: 10vw; */
+    /* border: 1px solid black; */
+    border-bottom:1px solid grey;
+}
+.m-loggers, .m-createnote {
+    /* height: 100vh; */
+    background-color: white;
+}
+.m-loggers {
+    height: 100vh;
+    bottom: 10vw;
+}
+.m-loggers-item::before {
+    content: '';
+    background: url('../imgs/today.png') no-repeat top left /50px 50px;/*兼容没测*/
+    position: absolute;
+    top: 13px;
+    left: -50px;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+}
+.header-btns {
+    right: 3vw;
+}
+.header-setting, .monthly-info {
+    height: 8vw;
+}
