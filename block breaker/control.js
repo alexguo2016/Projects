@@ -3,12 +3,12 @@ var bindMove = function() {
     var playerSpeed = 10
     c.addEventListener('keydown', function(event) {
         var keyCode = event.keyCode
-        var canMoveLeft = ((px - playerSpeed) >= 0)
-        var canMoveRight = ((px + 70 + playerSpeed) < canvasWidth)
+        var canMoveLeft = (imgs.player.px >= 0)
+        var canMoveRight = (imgs.player.px + 70 < imgs.canvas.canvasWidth)
         if (keyCode == 37 && canMoveLeft) {
-            px -= playerSpeed
+            imgs.player.px -= playerSpeed
         } else if (keyCode == 39 && canMoveRight) {
-            px += playerSpeed
+            imgs.player.px += playerSpeed
         }
     })
 }
