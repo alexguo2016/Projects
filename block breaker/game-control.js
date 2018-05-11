@@ -1,7 +1,9 @@
-var Game = function(fps) {
+var Game = function(fps, images, runCallback) {
+    //fps控制帧率，image代表需要载入的图片,是一个对象{image: imageURL...}
     var g = {
         actions: {},
         keydowns: {},
+        images: {},
     }
     var canvas = e('#myCanvas')
     var cxt = canvas.getContext("2d")
@@ -24,7 +26,7 @@ var Game = function(fps) {
         g.actions[key] = callback
     }
     //timer
-    window.fps = 30
+    window.fps = e('#debug_input').value
     var runloop = function() {
         var actions = Object.keys(g.actions)
         for (var i = 0; i < actions.length; i++) {
@@ -45,10 +47,50 @@ var Game = function(fps) {
         }, 1000/window.fps)
     }
 
-    setTimeout(function() {
-        runloop()
-    }, 1000/window.fps)
+    //开始运行程序之前需要预先载入图片,然后运行g.run
+    var loads = []
+    var names = Object.keys(images)
+    for (var i = 0; i < names.length; i++) {
+        let name = names[i]
+        var path = images[name]
+        let img = new Image()
+        img.src = path
 
+        img.onload = function() {
+            //所有图片载入成功之后，调用run
+            g.images[name] = img
+            loads.push(1)
+            // log('images-->', img)
+            if (loads.length == names.length) {
+                g.run()
+            }
+        }
+    }
+
+
+    g.imageByName = function(name) {
+        // log('name', images)
+        var img = g.images[name]
+        var image = {
+            image: img,
+        }
+        return image
+    }
+
+    //开始运行
+    g.run = function() {
+        // log('g.runCallback', runCallback)
+        runCallback(g)
+        setTimeout(function() {
+            runloop()
+        }, 1000/window.fps)
+    }
+
+    g.drawText = function(score) {
+        g.context.font = "30px bold 微软雅黑"
+        g.context.fillText(`分数: ${score}`, 20, 380)
+        // log('score')
+    }
     return g
 
 }
