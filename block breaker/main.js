@@ -47,14 +47,7 @@ var __main = function() {
             }
         }
 
-        // var testPaddle = function(paddle) {
-        //     game.drawImage(paddle)
-        //
-        //     log(paddle.image.height, paddle.image.width, paddle.x, paddle.y)
-        // }
-
         game.draw = function() {
-            // testPaddle(paddle)
             game.drawImage(paddle)
             game.drawImage(ball)
             for (var i = 0; i < blocks.length; i++) {

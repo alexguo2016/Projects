@@ -50,6 +50,7 @@ var Game = function(fps, images, runCallback) {
     //开始运行程序之前需要预先载入图片,然后运行g.run
     var loads = []
     var names = Object.keys(images)
+    //这里let的使用算是一个hack，否则只能读取最后一张图片，JavaScript的固有bug
     for (var i = 0; i < names.length; i++) {
         let name = names[i]
         var path = images[name]
@@ -67,7 +68,6 @@ var Game = function(fps, images, runCallback) {
         }
     }
 
-
     g.imageByName = function(name) {
         // log('name', images)
         var img = g.images[name]
@@ -79,7 +79,6 @@ var Game = function(fps, images, runCallback) {
 
     //开始运行
     g.run = function() {
-        // log('g.runCallback', runCallback)
         runCallback(g)
         setTimeout(function() {
             runloop()
@@ -89,7 +88,6 @@ var Game = function(fps, images, runCallback) {
     g.drawText = function(score) {
         g.context.font = "30px bold 微软雅黑"
         g.context.fillText(`分数: ${score}`, 20, 380)
-        // log('score')
     }
     return g
 
