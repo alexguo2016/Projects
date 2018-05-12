@@ -30,4 +30,4 @@ var enableDebugMode = function(game, enable) {
 
 }
 //for test
-blocks = []
+// blocks = []

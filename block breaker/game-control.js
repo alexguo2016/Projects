@@ -1,6 +1,7 @@
 var Game = function(fps, images, runCallback) {
     //fps控制帧率，image代表需要载入的图片,是一个对象{image: imageURL...}
     var g = {
+        scene: null,
         actions: {},
         keydowns: {},
         images: {},
@@ -21,6 +22,14 @@ var Game = function(fps, images, runCallback) {
     window.addEventListener('keyup', function(event) {
         g.keydowns[event.key] = false
     })
+    //update
+    g.update = function() {
+        g.scene.update()
+    }
+    g.draw = function() {
+        g.scene.draw()
+    }
+
     //register
     g.registerAction = function(key, callback) {
         g.actions[key] = callback
@@ -78,16 +87,27 @@ var Game = function(fps, images, runCallback) {
     }
 
     //开始运行
-    g.run = function() {
-        runCallback(g)
+    g.runWithScene = function(scene) {
+        g.scene = scene
         setTimeout(function() {
             runloop()
         }, 1000/window.fps)
     }
 
+    g.run = function() {
+        runCallback(g)
+
+    }
+
     g.drawText = function(score) {
         g.context.font = "30px bold 微软雅黑"
         g.context.fillText(`分数: ${score}`, 20, 380)
+    }
+
+    //用于切换场景
+    g.replaceScene = function(scene) {
+        g.runWithScene(scene)
+        // g.scene = scene
     }
     return g
 
