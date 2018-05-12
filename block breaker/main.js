@@ -6,8 +6,9 @@ var __main = function() {
         block: 'block.png',
     }
 
-    var game = new Game(40, images, function(g) {
+    var game = new Game(30, images, function(g) {
         enableDebugMode(game, true)
+
         var paddle = new Paddle(game)
         var ball = new Ball(game)
         var score = 0
@@ -48,6 +49,10 @@ var __main = function() {
         }
 
         game.draw = function() {
+
+            //背景
+            game.context.fillStyle = '#678'
+            game.context.fillRect(0, 0, 600, 400)
             game.drawImage(paddle)
             game.drawImage(ball)
             for (var i = 0; i < blocks.length; i++) {
@@ -57,8 +62,36 @@ var __main = function() {
                     game.drawImage(block)
                 }
             }
+            game.context.fillStyle = 'orange'
             game.drawText(score)
         }
+        //增加拖拽
+        var enableDrag = false
+        game.canvas.addEventListener('mousedown', function(event) {
+            var x = event.offsetX
+            var y = event.offsetY
+            log(x,y)
+            if (ball.hasPoint(x, y)) {
+                enableDrag = true
+            }
+        })
+        game.canvas.addEventListener('mousemove', function(event) {
+
+            var x = event.offsetX
+            var y = event.offsetY
+            if (enableDrag) {
+                ball.x = x
+                ball.y = y
+            }
+        })
+        game.canvas.addEventListener('mouseup', function(event) {
+            var x = event.offsetX
+            var y = event.offsetY
+            enableDrag = false
+            // log(x,y)
+        })
+
+
     })
 
 

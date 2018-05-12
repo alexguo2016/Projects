@@ -27,6 +27,7 @@ var enableDebugMode = function(game, enable) {
         var target = event.target
         window.fps = Number(target.value)
     })
+
 }
 //for test
 blocks = []

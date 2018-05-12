@@ -33,5 +33,10 @@ var Ball = function(game) {
     o.rebound = function() {
         o.speedY *= -1
     }
+    o.hasPoint = function(x, y) {
+        var xIn = x >= o.x && x <= o.x + o.image.width
+        var yIn = y >= o.y && y <= o.y + o.image.height
+        return xIn && yIn
+    }
     return o
 }
