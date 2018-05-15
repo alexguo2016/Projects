@@ -12,7 +12,7 @@ var Scene = function(game) {
     game.canvas.addEventListener('mousedown', function(event) {
         var x = event.offsetX
         var y = event.offsetY
-        log(x,y)
+        // log(x,y)
         if (ball.hasPoint(x, y)) {
             enableDrag = true
         }

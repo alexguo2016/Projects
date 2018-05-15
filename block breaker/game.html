@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8">
         <title></title>
-        <script src="tools.js" charset="utf-8"></script>
 
     </head>
     <body>
@@ -11,20 +10,24 @@
 Your browser does not support the canvas element.
 </canvas>
         <hr>
-        <span>速度调节</span><input type="range"  value="40" min = '1' max = '1000' id = 'debug_input' />
+        <span>速度调节</span><input type="range"  value="30" min = '1' max = '1000' id = 'debug_input' />
         <hr>
-        <!-- <textarea name="name" rows="20" cols="72" id = 'console_textarea'></textarea> -->
-        <!-- <img src="ball.png" style="display:none" alt="">
-        <img src="player.png" style="display:none" alt=""> -->
-        <script src="game-control.js" charset="utf-8"></script>
+        <!-- 辅助函数文件 -->
+        <script src="tool/game-tools.js" charset="utf-8"></script>
+        <script src="tool/tools.js" charset="utf-8"></script>
+        <!-- game相关文件 -->
+        <script src="game/game-2.js" charset="utf-8"></script>
+        <script src="game/game-control.js" charset="utf-8"></script>
+        <script src="game/my_scene.js" charset="utf-8"></script>
+        <!-- 场景和标题相关文件 -->
+        <script src="scene/main/ball.js" charset="utf-8"></script>
+        <script src="scene/main/paddle.js" charset="utf-8"></script>
+        <script src="scene/main/block.js" charset="utf-8"></script>
+        <script src="scene/main/scene.js" charset="utf-8"></script>
+        <script src="scene/title/scene_title.js" charset="utf-8"></script>
+        <script src="scene/end/scene_end.js" charset="utf-8"></script>
+        <!-- 关卡和运行相关文件 -->
         <script src="level.js" charset="utf-8"></script>
-        <script src="game-tools.js" charset="utf-8"></script>
-        <script src="ball.js" charset="utf-8"></script>
-        <script src="paddle.js" charset="utf-8"></script>
-        <script src="block.js" charset="utf-8"></script>
-        <script src="game-2.js" charset="utf-8"></script>
-        <script src="scene.js" charset="utf-8"></script>
-        <script src="scene_end.js" charset="utf-8"></script>
         <script src="main.js" charset="utf-8"></script>
 
     </body>
