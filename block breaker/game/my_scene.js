@@ -2,10 +2,10 @@ class myScene {
     constructor(game) {
         this.game = game
     }
-    draw = function() {
+    draw() {
 
     }
-    update = function() {
+    update() {
 
     }
 }
