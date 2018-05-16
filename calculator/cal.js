@@ -10,7 +10,7 @@ var actions = {
         result.value = cal(equation)
     },
     '%': function(result, equation) {
-        result.value = cal(equation).toFixed(2)
+        result.value = Number(cal(equation)).toFixed(2)
     },
 }
 //tools
@@ -51,7 +51,8 @@ var equFormat = function(equation) {
 //方法，例如计算，清除，退格等等。
 var cal = function(equation) {
     try {
-        var equ = equFormat(equation)
+        // var equ = equFormat(equation)
+        var equ = equation
         var res = eval(equ)
         return res
     } catch(e) {
