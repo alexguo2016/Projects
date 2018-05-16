@@ -3,7 +3,7 @@ var log = console.log.bind(console)
 var e = function(str) {
     return document.querySelector(str)
 }
-
+//方法，例如计算，清除，退格等等。
 var cal = function(equation) {
     try {
         var res = eval(equation)
@@ -23,6 +23,21 @@ var redo = function(equation) {
         return ''
     }
 }
+//表驱动，如果需要增加功能，主要修改这里即可。
+var actions = {
+    'C': function(result) {
+        result.value = clear()
+    },
+    '<=': function(result, equation) {
+        result.value = redo(equation)
+    },
+    '=': function(result, equation) {
+        result.value = cal(equation)
+    },
+    '%': function(result, equation) {
+        result.value = cal(equation).toFixed(2)
+    },
+}
 
 var bindControls = function() {
     var cb = e('.cal_box')
@@ -30,21 +45,20 @@ var bindControls = function() {
     cb.addEventListener('click', function(event) {
         var self = event.target
         var v = self.value
-        if (v == undefined || self.classList.contains('result')) {
-            return
-        } else {
-            if (v != '=' && v != 'C' && v != '<=') {
+
+        var validValue = !(v == undefined || self.classList.contains('result'))
+        var opts = Object.keys(actions)
+        var isOpt = opts.includes(v)
+
+        var equation = result.value
+        if (validValue) {
+            if (isOpt) {
+                actions[v].call(this, result, equation)
+            } else {
                 result.value += v
-            } else if (v == 'C') {
-                result.value = clear()
-            } else if (v == '<=') {
-                var equation = result.value
-                result.value = redo(equation)
             }
-            else {
-                var equation = result.value
-                result.value = cal(equation)
-            }
+        } else {
+            return
         }
     })
 }
