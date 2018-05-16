@@ -1,28 +1,3 @@
-//tools
-var log = console.log.bind(console)
-var e = function(str) {
-    return document.querySelector(str)
-}
-//方法，例如计算，清除，退格等等。
-var cal = function(equation) {
-    try {
-        var res = eval(equation)
-        return eval(equation)
-    } catch(e) {
-        return "equation error!"
-    }
-}
-var clear = function() {
-    return ''
-}
-var redo = function(equation) {
-    var len = equation.length
-    if (len > 0) {
-        return equation.substr(0, len - 1)
-    } else {
-        return ''
-    }
-}
 //表驱动，如果需要增加功能，主要修改这里即可。
 var actions = {
     'C': function(result) {
@@ -37,6 +12,62 @@ var actions = {
     '%': function(result, equation) {
         result.value = cal(equation).toFixed(2)
     },
+}
+//tools
+var log = console.log.bind(console)
+var e = function(str) {
+    return document.querySelector(str)
+}
+//对算式进行格式化，消除eval带来的bug
+var digFormat = function(str) {
+    var len = str.length
+    var res = ''
+    for (var i = 0; i < len; i++) {
+        if(str[i] != '0') {
+            break
+        }
+    }
+    res = str.substr(i, len - 1)
+    return res
+}
+var equFormat = function(equation) {
+    var opts = ['+', '-', '*', '/', '(', ')']
+    var start = 0
+    var arr = []
+    var res = ''
+    for (var i = 0; i < equation.length; i++) {
+        if (opts.includes(equation[i]) || i == equation.length - 1) {
+            var ele = equation.substr(start, i - start)
+            ele = digFormat(ele)
+            arr.push(ele)
+            arr.push(equation[i])
+            start = i + 1
+        }
+    }
+    res = arr.join('')
+    return res
+}
+// log('test', equFormat('0078+0023-0025'))
+//方法，例如计算，清除，退格等等。
+var cal = function(equation) {
+    try {
+        var equ = equFormat(equation)
+        var res = eval(equ)
+        return res
+    } catch(e) {
+        return "equation error!"
+    }
+}
+var clear = function() {
+    return ''
+}
+var redo = function(equation) {
+    var len = equation.length
+    if (len > 0) {
+        return equation.substr(0, len - 1)
+    } else {
+        return ''
+    }
 }
 
 var bindControls = function() {
