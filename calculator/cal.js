@@ -24,10 +24,11 @@ var digFormat = function(str) {
     var res = ''
     for (var i = 0; i < len; i++) {
         if(str[i] != '0') {
+            log('in')
             break
         }
     }
-    res = str.substr(i, len - 1)
+    res = str.substr(i, len)
     return res
 }
 var equFormat = function(equation) {
@@ -47,15 +48,15 @@ var equFormat = function(equation) {
     res = arr.join('')
     return res
 }
-// log('test', equFormat('0078+0023-0025'))
 //方法，例如计算，清除，退格等等。
 var cal = function(equation) {
     try {
-        // var equ = equFormat(equation)
-        var equ = equation
+        var equ = equFormat(equation)
+        // var equ = equation
         var res = eval(equ)
         return res
     } catch(e) {
+        log(e)
         return "equation error!"
     }
 }
