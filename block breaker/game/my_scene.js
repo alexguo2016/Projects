@@ -2,10 +2,14 @@ class myScene {
     constructor(game) {
         this.game = game
     }
-    draw = function() {
-
+    static new(game) {
+        let i = new this(game)
+        return i
     }
-    update = function() {
+    draw() {
+        // alert('这个方法必须被重写')
+    }
+    update() {
 
     }
 }

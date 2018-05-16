@@ -8,9 +8,11 @@ var __main = function() {
 
     // var scene = new Scene(game)
 
-    var game = new Game(20, images, function(g) {
+    var game = new Game(window.fps = '20', images, function(g) {
         // var s = new Scene(g)
-        var s = new SceneTitle(g)
+        // var s = new SceneTitle(g)
+        var s = SceneTitle.new(g)
+        // log(window.fps)
         g.runWithScene(s)
     })
     enableDebugMode(game, true)

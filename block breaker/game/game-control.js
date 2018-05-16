@@ -1,3 +1,4 @@
+
 var Game = function(fps, images, runCallback) {
     //fps控制帧率，image代表需要载入的图片,是一个对象{image: imageURL...}
     var g = {
@@ -92,6 +93,7 @@ var Game = function(fps, images, runCallback) {
         setTimeout(function() {
             runloop()
         }, 1000/window.fps)
+        // log(window.fps)
     }
 
     g.run = function() {
