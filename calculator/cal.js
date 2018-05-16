@@ -62,8 +62,39 @@ var bindControls = function() {
         }
     })
 }
-
+//插入div，插件化
+var insertCal = function() {
+    var container = e('.cal_container')
+    var t = `
+        <div id="sDiv" class = "cal_box item_center item_child">
+            <input type="text" name="t" id="t" class = "result" value="" /><br />
+            <input type="button"  value="1" />
+            <input type="button"  value="2" />
+            <input type="button"  value="3" />
+            <input type="button"  value="4" /><br />
+            <input type="button"  value="5" />
+            <input type="button"  value="6" />
+            <input type="button"  value="7" />
+            <input type="button"  value="8" /><br />
+            <input type="button"  value="9" />
+            <input type="button"  value="0" />
+            <input type="button"  value="." />
+            <input type="button"  value="/" /><br />
+            <input type="button"  value="+" />
+            <input type="button"  value="-" />
+            <input type="button"  value="*" />
+            <input type="button"  value="C" /><br />
+            <input type="button"  value="(" />
+            <input type="button"  value=")" />
+            <input type="button"  value="%" />
+            <input type="button"  value="<=" /><br />
+            <input type="button"  id="equ" value="=" />
+        </div>
+    `
+    container.insertAdjacentHTML('beforeend', t)
+}
 var __main = function() {
+    insertCal()
     bindControls()
 }
 
