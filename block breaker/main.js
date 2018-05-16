@@ -8,7 +8,11 @@ var __main = function() {
 
     // var scene = new Scene(game)
 
+<<<<<<< HEAD
     var game = new Game(window.fps = '20', images, function(g) {
+=======
+    var game = Game.instance(20, images, function(g) {
+>>>>>>> test
         // var s = new Scene(g)
         // var s = new SceneTitle(g)
         var s = SceneTitle.new(g)
