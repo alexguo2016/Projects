@@ -20,5 +20,10 @@ var Block = function(game, block_info) {
         var collide = rectIntersects(o, ball) || rectIntersects(ball, o)
         return o.alive && collide
     }
+    o.hasPoint = function(x, y) {
+        var xIn = x >= o.x && x <= o.x + o.image.width
+        var yIn = y >= o.y && y <= o.y + o.image.height
+        return xIn && yIn
+    }
     return o
 }

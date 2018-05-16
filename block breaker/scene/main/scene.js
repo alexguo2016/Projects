@@ -12,13 +12,11 @@ var Scene = function(game) {
     game.canvas.addEventListener('mousedown', function(event) {
         var x = event.offsetX
         var y = event.offsetY
-        // log(x,y)
         if (ball.hasPoint(x, y)) {
             enableDrag = true
         }
     })
     game.canvas.addEventListener('mousemove', function(event) {
-
         var x = event.offsetX
         var y = event.offsetY
         if (enableDrag) {
@@ -30,11 +28,9 @@ var Scene = function(game) {
         var x = event.offsetX
         var y = event.offsetY
         enableDrag = false
-        // log(x,y)
     })
 
-    var blocks = loadLevel(game, 2)// for test
-    // blocks = loadLevel(game, 2)// for test
+
     //增加控制
     game.registerAction('a', function() {
         paddle.moveLeft()
@@ -47,6 +43,7 @@ var Scene = function(game) {
         // log('f')
     })
 
+    var blocks = loadLevel(game, 2)
     s.draw = function() {
         game.context.fillStyle = '#678'
         game.context.fillRect(0, 0, 600, 400)

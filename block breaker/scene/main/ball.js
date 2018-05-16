@@ -1,7 +1,7 @@
 var Ball = function(game) {
     var o = game.imageByName('ball')
-    o.x = 100
-    o.y = 100
+    o.x = 200
+    o.y = 200
     o.speedX = 5
     o.speedY = 5
     o.fired = false
@@ -12,7 +12,6 @@ var Ball = function(game) {
     }
     o.move = function() {
         if (o.fired) {
-            // log('move')
             if (o.x < 0 || o.x + o.image.width > 600) {
                 o.speedX *= -1
             }

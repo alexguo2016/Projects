@@ -15,7 +15,7 @@ var __main = function() {
         g.runWithScene(s)
     })
     enableDebugMode(game, true)
-
+    editBlock(game, 2)
 }
 
 __main()

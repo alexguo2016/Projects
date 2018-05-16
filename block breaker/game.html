@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title></title>
+        <script src="https://cdn.bootcss.com/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
 
     </head>
     <body>
@@ -11,6 +12,10 @@ Your browser does not support the canvas element.
 </canvas>
         <hr>
         <span>速度调节</span><input type="range"  value="20" min = '1' max = '100' id = 'debug_input' />
+        <hr>
+        <input type="checkbox" id = 'debug_ball'>ball editor
+        <input type="checkbox" id = 'debug_block'>block editor
+        <button type="button" id="add_block">add block</button>
         <hr>
         <!-- 辅助函数文件 -->
         <script src="tool/game-tools.js" charset="utf-8"></script>
@@ -27,6 +32,7 @@ Your browser does not support the canvas element.
         <script src="scene/title/scene_title.js" charset="utf-8"></script>
         <script src="scene/end/scene_end.js" charset="utf-8"></script>
         <!-- 关卡和运行相关文件 -->
+        <script src="scene/editor/mission_editor.js" charset="utf-8"></script>
         <script src="level.js" charset="utf-8"></script>
         <script src="main.js" charset="utf-8"></script>
 
