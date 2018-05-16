@@ -24,7 +24,6 @@ var digFormat = function(str) {
     var res = ''
     for (var i = 0; i < len; i++) {
         if(str[i] != '0') {
-            log('in')
             break
         }
     }
@@ -52,7 +51,6 @@ var equFormat = function(equation) {
 var cal = function(equation) {
     try {
         var equ = equFormat(equation)
-        // var equ = equation
         var res = eval(equ)
         return res
     } catch(e) {
