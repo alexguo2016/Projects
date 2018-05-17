@@ -19,7 +19,7 @@ var actions = {
 }
 //对应键盘事件
 var keyActions = {
-    'Escape': function(result) {
+    'c': function(result) {
         result.value = clear()
     },
     'Backspace': function(result, equation) {
