@@ -50,11 +50,23 @@ var equFormat = function(equation) {
     res = arr.join('')
     return res
 }
+var endWithPercent = function(equation) {
+    var len = equation.length
+    if (equation[len - 1] == '%') {
+        return true
+    } else {
+        return false
+    }
+}
 //方法，例如计算，清除，退格等等。
 var cal = function(equation) {
     try {
-        var equ = equFormat(equation)
-        var res = eval(equ)
+        if (!endWithPercent(equation)) {
+            var equ = equFormat(equation)
+            var res = eval(equ)
+        } else {
+            res = equation
+        }
         return res
     } catch(e) {
         // log(e)
