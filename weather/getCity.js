@@ -12,18 +12,12 @@ var bindCity = function() {
     box.addEventListener('click', function(event) {
         var self = event.target
         if (self.classList.contains('get_weather')) {
-            // log('aa')
             var city = getCity()
-            try {
-                getData(function(r) {
-                    var wd = JSON.parse(r)
-                    var msgArray = getTemps(wd)
-                    drawGraph(msgArray, city)
-                }, city)
-            } catch (e) {
-                // alert('输入城市名称有误！')
-                log(e)
-            }
+            getData(function(r) {
+                var wd = JSON.parse(r)
+                var msgArray = getTemps(wd)
+                drawGraph(msgArray, city)
+            }, city)
         }
     })
 }
