@@ -3,14 +3,17 @@ var actions = {
     'C': function(result) {
         result.value = clear()
     },
-    '<=': function(result, equation) {
+    '退格': function(result, equation) {
         result.value = redo(equation)
     },
     '=': function(result, equation) {
         result.value = cal(equation)
     },
-    '%': function(result, equation) {
+    '.00': function(result, equation) {
         result.value = Number(cal(equation)).toFixed(2)
+    },
+    '%' :function(result, equation) {
+        result.value = perscent(equation, result)
     },
 }
 //tools
@@ -54,7 +57,7 @@ var cal = function(equation) {
         var res = eval(equ)
         return res
     } catch(e) {
-        log(e)
+        // log(e)
         return "equation error!"
     }
 }
@@ -68,6 +71,19 @@ var redo = function(equation) {
     } else {
         return ''
     }
+}
+var perscent = function(equation) {
+    var lastChar = equation[equation.length - 1]
+    if (lastChar != '%') {
+        var r = cal(equation)
+        var res = Number(r) * 100
+        res = res.toFixed(2) + '%'
+    } else {
+        var r = equation.substr(0, equation.length - 2)
+        var res = Number(r) / 100
+        res += ''
+    }
+    return res
 }
 
 var bindControls = function() {
@@ -118,8 +134,9 @@ var insertCal = function() {
             <input type="button"  value="C" /><br />
             <input type="button"  value="(" />
             <input type="button"  value=")" />
-            <input type="button"  value="%" />
-            <input type="button"  value="<=" /><br />
+            <input type="button"  value=".00" />
+            <input type="button"  value="%" /><br />
+            <input type="button"  value="退格" /><br />
             <input type="button"  id="equ" value="=" />
         </div>
     `
