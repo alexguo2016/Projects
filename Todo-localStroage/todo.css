@@ -42,14 +42,6 @@ body {
 	font-weight: 300;
 }
 
-/* button,
-input[type="checkbox"] {
-	outline: none;
-} */
-
-/* .hidden {
-	display: none;
-} */
 .new-todo{
     width: 70%;
     font-size: 30px;

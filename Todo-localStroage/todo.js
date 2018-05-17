@@ -12,9 +12,11 @@ button  listeners
 //使用表驱动法，对应增删改
 var actions = {
     add: function() {
-        createTodo()
-        saveTols()
         var input = e('.new-todo')
+        if (input.value != '') {
+            createTodo()
+            saveTols()
+        }
         input.value = ''
     },
     remove: function(item) {
