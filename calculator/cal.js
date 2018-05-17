@@ -124,7 +124,65 @@ var insertCal = function() {
     `
     container.insertAdjacentHTML('beforeend', t)
 }
+var insertCss = function() {
+    var head = e('head')
+    var t = `
+    <style type = "text/css">
+        /* init */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        input {
+            outline: none;
+        }
+        /* position */
+        .item_parent {
+            position: relative;
+            text-align: center;
+        }
+        .item_child {
+            position: absolute;
+            display:inline-block;
+        }
+        .item_center {
+            transform: translateX(-50%);
+        }
+        /* style */
+        #sDiv{
+            text-align: center;
+            border: solid 1px;
+            width: 300px;
+            border-radius: 10px;
+            background-color: aqua;
+        }
+        #t{
+            border:solid 1px ;
+            width: 260px;
+            border-radius: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        input[type=button]{
+            border-radius: 5px;
+            width: 55px;
+            height: 30px;
+            margin: 2px;
+            font-size: 20px;
+        }
+        #equ{
+            width: 260px;
+            font - size: 30px;
+            margin-bottom: 10px;
+        }
+    </style>
+    `
+    head.insertAdjacentHTML('beforeend', t)
+}
+
 var __main = function() {
+    insertCss()
     insertCal()
     bindControls()
 }
