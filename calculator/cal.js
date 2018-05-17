@@ -31,12 +31,12 @@ var digFormat = function(str) {
     return res
 }
 var equFormat = function(equation) {
-    var opts = ['+', '-', '*', '/', '(', ')']
+    var signs = ['+', '-', '*', '/', '(', ')']
     var start = 0
     var arr = []
     var res = ''
     for (var i = 0; i < equation.length; i++) {
-        if (opts.includes(equation[i]) || i == equation.length - 1) {
+        if (signs.includes(equation[i]) || i == equation.length - 1) {
             var ele = equation.substr(start, i - start)
             ele = digFormat(ele)
             arr.push(ele)
@@ -94,6 +94,7 @@ var bindControls = function() {
     })
 }
 //插入div，插件化
+//插入css
 var insertCal = function() {
     var container = e('.cal_container')
     var t = `
