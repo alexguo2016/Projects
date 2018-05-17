@@ -1,4 +1,5 @@
 //表驱动，如果需要增加功能，主要修改这里即可。
+//对应页面button的事件
 var actions = {
     'C': function(result) {
         result.value = clear()
@@ -14,6 +15,18 @@ var actions = {
     },
     '%' :function(result, equation) {
         result.value = percent(equation)
+    },
+}
+//对应键盘事件
+var keyActions = {
+    'Escape': function(result) {
+        result.value = clear()
+    },
+    'Backspace': function(result, equation) {
+        result.value = redo(equation)
+    },
+    'Enter': function(result, equation) {
+        result.value = cal(equation)
     },
 }
 //tools
@@ -98,7 +111,7 @@ var percent = function(equation) {
     return res
 }
 
-var bindControls = function() {
+var bindBtns = function() {
     var cb = e('.cal_box')
     var result = e('.result')
     cb.addEventListener('click', function(event) {
@@ -118,6 +131,22 @@ var bindControls = function() {
             }
         } else {
             return
+        }
+    })
+}
+var bindKeydowns = function() {
+    var cb = e('body')
+    var result = e('.result')
+    cb.addEventListener('keydown', function(event) {
+        // log(event.key)
+        var v = event.key
+        var opts = Object.keys(keyActions)
+        var isOpt = opts.includes(v)
+        var equation = result.value
+        if (isOpt) {
+            keyActions[v].call(this, result, equation)
+        } else {
+            result.value += event.key
         }
     })
 }
@@ -214,7 +243,8 @@ var insertCss = function() {
 var __main = function() {
     insertCss()
     insertCal()
-    bindControls()
+    bindBtns()
+    bindKeydowns()
 }
 
 __main()
