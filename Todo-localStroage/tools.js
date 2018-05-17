@@ -2,6 +2,9 @@ var log = console.log.bind(log)
 var e = function(str) {
     return document.querySelector(str)
 }
+var es = function(str) {
+    return document.querySelectorAll(str)
+}
 var t_find = function(element, str) {
     return element.querySelector(str)
 }

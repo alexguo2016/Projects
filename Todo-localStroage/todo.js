@@ -14,6 +14,8 @@ var actions = {
     add: function() {
         createTodo()
         saveTols()
+        var input = e('.new-todo')
+        input.value = ''
     },
     remove: function(item) {
         var id = item.dataset.id
@@ -62,7 +64,7 @@ var bindBtns = function() {
         } else if (self.classList.contains('todo-item-text')) {
             self.contentEditable = true
         } else if (self.classList.contains('clearDone')) {
-            var items = document.querySelectorAll('.done')
+            var items = es('.done')
             actions.clearDone(items)
         }
     })
@@ -90,10 +92,6 @@ var bindEdit = function() {
             }
         }
     })
-}
-
-var preparePage = function() {
-    insertDialog()
 }
 
 var main = function() {
