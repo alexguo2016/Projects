@@ -7,23 +7,20 @@
             .done {
                 color: red;
             }
-            .dialog {
-                position: fixed;
-                top: 200px;
-                left: 100px;
-                width: 200px;
-                height: 100px;
-                background-color: #aaa;
-            }
         </style>
+        <link rel="stylesheet" href="todo.css">
     </head>
     <body>
         <div class="todo-container">
-            <input id = 'todo-input' type="text" placeholder="please input your todo" />
-            <button class = 'addBtn' type="button">Add todo</button>
-            <div class="items">
+            <header>
+                <h1>My todos</h1>
+                <input id = 'todo-input' class = 'new-todo' type="text" placeholder="please input your todo" />
+                <button class = 'addBtn' type="button">Add todo</button>
+                <button class = 'clearDone' type="button">clearDone</button>
+            </header>
+            <ul class="items">
 
-            </div>
+            </ul>
         </div>
 
 

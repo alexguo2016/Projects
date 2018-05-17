@@ -31,7 +31,21 @@ var actions = {
         //弹出对话框，用于修改文本  暂时不会做……
         // create_dialog_box()
         updateIntodos(id, str)
-    }
+    },
+    clearDone: function(items) {
+        for (var i = 0; i < items.length; i++) {
+            var id = items[i].dataset.id
+            items[i].remove()
+            deleteIntodos(id)
+        }
+    },
+}
+
+var getDones = function(obj) {
+    var dones = []
+    d_item = obj.closest('.todo-item-done')
+    dones.push(d_item)
+    return dones
 }
 
 var bindBtns = function() {
@@ -47,10 +61,18 @@ var bindBtns = function() {
             actions.remove(item)
         } else if (self.classList.contains('todo-item-text')) {
             self.contentEditable = true
-            //弹出一个对话框，用于修改内容
-            // actions.update()
+        } else if (self.classList.contains('clearDone')) {
+            var items = document.querySelectorAll('.done')
+            actions.clearDone(items)
         }
     })
+    t_box.addEventListener('keypress', function(event) {
+        var self = event.target
+        if (event.key == 'Enter') {
+            actions.add()
+        }
+    })
+
 }
 var bindEdit = function() {
     var items = e('.items')
@@ -69,25 +91,12 @@ var bindEdit = function() {
         }
     })
 }
-// var bindDialog = function() {
-//     var d = e('.dialog')
-//     d.addEventListener('click', function(event) {
-//         var self = event.target
-//         if (self.classList.contains('dialog_sumit')) {
-//             var di = d.t_find('.dialog_input')
-//             var di_text = di.value
-//
-//         }
-//     })
-// }
-//用于弹窗，暂时不可用
 
 var preparePage = function() {
     insertDialog()
 }
 
 var main = function() {
-    // preparePage()  用于弹窗，暂时不可用
     ls()
     showTodos()
     bindBtns()

@@ -42,11 +42,11 @@ var insertTodo = function(todo) {
         d_status = 'done'
     }
     var html = `
-        <div class = 'todo-item ${d_status}' data-id = '${todo.id}'>
+        <li class = 'todo-item ${d_status} todo-list' data-id = '${todo.id}'>
             <button type = 'button' class = 'todo-item-delete'>delete</button>
             <button type = 'button' class = 'todo-item-done'>done</button>
             <span class = 'todo-item-text'>${todo.text}</span>
-        </div>
+        </li>
     `
     items.insertAdjacentHTML('beforeend', html)
 }
@@ -56,17 +56,7 @@ var insertTodos = function(ts) {
         insertTodo(ts[i])
     }
 }
-// var insertDialog = function() {
-//     var html = `
-//         <div class = 'dialog'>
-//             <input class = 'dialog_input' type = 'text' placeholder = 'update to new' />
-//             <button class = 'dialog_sumit'>sumit</button>
-//         </div>
-//     `
-//     var body = e('body')
-//     body.insertAdjacentHTML('beforeend', html)
-// }
-//用于弹窗，暂时不可用
+
 var deleteIntodos = function(id) {
     //var todos = ls()
     for (var i = 0; i < todos.length; i++) {
