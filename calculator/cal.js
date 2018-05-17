@@ -13,7 +13,7 @@ var actions = {
         result.value = Number(cal(equation)).toFixed(2)
     },
     '%' :function(result, equation) {
-        result.value = perscent(equation, result)
+        result.value = percent(equation)
     },
 }
 //tools
@@ -72,7 +72,7 @@ var redo = function(equation) {
         return ''
     }
 }
-var perscent = function(equation) {
+var percent = function(equation) {
     var lastChar = equation[equation.length - 1]
     if (lastChar != '%') {
         var r = cal(equation)
