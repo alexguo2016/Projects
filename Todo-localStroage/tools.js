@@ -107,7 +107,7 @@ localStorage相关
 */
 //判断有没有缓存，没有则创建一个localStorage，有则读取并赋值给todos
 var ls = function() {
-    var data = []
+    var data = '[]'
     if (!localStorage.getItem('todoList')) {
         localStorage.setItem('todoList', '[]')
     } else {
