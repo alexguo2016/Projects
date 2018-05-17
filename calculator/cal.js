@@ -134,10 +134,10 @@ var bindBtns = function() {
         }
     })
 }
-var bindKeydowns = function() {
+var bindKey = function() {
     var cb = e('body')
     var result = e('.result')
-    cb.addEventListener('keydown', function(event) {
+    cb.addEventListener('keypress', function(event) {
         // log(event.key)
         var v = event.key
         var opts = Object.keys(keyActions)
@@ -244,7 +244,7 @@ var __main = function() {
     insertCss()
     insertCal()
     bindBtns()
-    bindKeydowns()
+    bindKey()
 }
 
 __main()
