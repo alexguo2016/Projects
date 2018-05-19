@@ -5,8 +5,8 @@ var log = console.log.bind(console)
 var ajax = function(method, path, data, callback) {
     var r = new XMLHttpRequest()
     r.open(method, path, true)
-    r.setRequestHeader('Origin', '*')
-    r.withCredentials = true;
+    // r.setRequestHeader('Origin', '*')
+    // r.withCredentials = true;
     r.setRequestHeader('Content-Type', 'application/json')
     r.onreadystatechange = function() {
         if (r.readyState == 4) {
@@ -18,7 +18,7 @@ var ajax = function(method, path, data, callback) {
 }
 
 var getData = (callback) => {
-    var method = 'GET'
+    var method = 'OPTIONS'
     var path = 'http://api.avatardata.cn/MingRenMingYan/Random?key=6cc25a1ab64942ae8b970121bedc014f'
     var data = {}
     ajax(method, path, data, callback)
