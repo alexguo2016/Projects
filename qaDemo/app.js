@@ -6,13 +6,6 @@ var app = express()
 app.use(express.static('static'))
 app.use(bodyParser.json())
 
-// var index = require('./route/index').routes
-// route.registerRoutes(index, app)
-// var answer = require('./route/answer').routes
-// route.registerRoutes(answer, app)
-// var question = require('./route/question').routes
-// route.registerRoutes(question, app)
-
 var routesList = [
     'index',
     'answer',
