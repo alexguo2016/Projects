@@ -6,6 +6,7 @@ var showQuestions = () => {
         insertQuestions(data)
         insertAnswers(data)
     })
+    bindShowAnswers()
 }
 
 var insertQuestions = (qs) => {
@@ -73,10 +74,11 @@ var insertTemplateQuestion = (obj, ele) => {
                 <li class="comments"><svg class="icon-bubble"><use xlink:href="#icon-bubble"></use></svg><span class="numero">${answerNum}</span></li>
             </ul>
         </div>
-        <div class="answerBox">
+        <div class="answerArea">
             <div class="blog-body item-parent">
                 <button class="userAnswerBtn">回答</button>
             </div>
+            <div class='answerBox myHidden'></div>
         </div>
     </div>
     `
@@ -100,9 +102,15 @@ var insertTemplateAnswer = (obj, ele) => {
     `
     ele.insertAdjacentHTML('beforeend', t)
 }
-//页面加载的时候加载ajax数据
-var __main = () => {
-    showQuestions()
-}
 
-__main()
+
+var bindShowAnswers = () => {
+    var mainBox = e('.main')
+    mainBox.addEventListener('click', (event) => {
+        var self = event.target
+        if (self.classList.contains('icon-bubble')) {
+            var aBox = myClosest('.answerBox', self)
+            aBox.classList.toggle('myHidden')
+        }
+    })
+}

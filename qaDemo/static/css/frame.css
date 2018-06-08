@@ -57,3 +57,7 @@ a {
 .comments {
     cursor: pointer;
 }
+
+.myHidden {
+    display: none;
+}
