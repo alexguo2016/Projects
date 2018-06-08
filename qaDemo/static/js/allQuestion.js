@@ -4,15 +4,14 @@ var showQuestions = () => {
     ajax(method, path, (r) => {
         var data = JSON.parse(r)
         insertQuestions(data)
+        insertAnswers(data)
     })
 }
 
 var insertQuestions = (qs) => {
     for (var i = 0; i < qs.length; i++) {
         var q = qs[i]
-        var id = q.id
         insertQuestion(q)
-        insertAnswers(qs, id)
     }
 }
 
@@ -21,11 +20,36 @@ var insertQuestion = (q) => {
     insertTemplateQuestion(q, main)
 }
 
-var insertAnswers = (qs, id) => {
+var insertAnswers = (qs) => {
+    for (var i = 0; i < qs.length; i++) {
+        var q = qs[i]
+        var id = q.id
+        insertAnswer(q, id)
+    }
+}
 
+var insertAnswer = (q, id) => {
+    //注意, answer是一个数组, 所以插入的时候需要进一步遍历
+    var qBoxes = es('.blog-container')
+    for (var i = 0; i < qBoxes.length; i++) {
+        var qBox = qBoxes[i]
+        if (qBox.dataset.id == id) {
+            var answers = q.answers
+            for (var j = 0; j < answers.length; j++) {
+                var ansItem = answers[j]
+                if (ansItem != undefined) {
+                    var answerBox = myFind('.answerBox', qBox)
+                    insertTemplateAnswer(ansItem, answerBox)
+                }
+            }
+        }
+    }
 }
 
 var insertTemplateQuestion = (obj, ele) => {
+    var date = new Date(obj.createTime * 1000)
+    var myTime = date.toLocaleDateString()
+    var answerNum = obj.answers.length
     var t = `
     <div class="blog-container" data-id="${obj.id}">
         <div class="blog-header">
@@ -45,13 +69,14 @@ var insertTemplateQuestion = (obj, ele) => {
 
         <div class="blog-footer">
             <ul>
-                <li class="published-date">${obj.createTime}</li>
-                <li class="comments"><a href="#"><svg class="icon-bubble"><use xlink:href="#icon-bubble"></use></svg><span class="numero">8</span></a></li>
+                <li class="published-date">${myTime}</li>
+                <li class="comments"><svg class="icon-bubble"><use xlink:href="#icon-bubble"></use></svg><span class="numero">${answerNum}</span></li>
             </ul>
         </div>
-
         <div class="answerBox">
-
+            <div class="blog-body item-parent">
+                <button class="userAnswerBtn">回答</button>
+            </div>
         </div>
     </div>
     `
@@ -59,6 +84,8 @@ var insertTemplateQuestion = (obj, ele) => {
 }
 
 var insertTemplateAnswer = (obj, ele) => {
+    var date = new Date(obj.createTime * 1000)
+    var myTime = date.toLocaleDateString()
     var t = `
         <div class="blog-body">
             ${obj.content}
@@ -66,7 +93,7 @@ var insertTemplateAnswer = (obj, ele) => {
         </div>
         <div class="blog-footer">
             <ul>
-                <li class="published-date">${obj.createTIme}</li>
+                <li class="published-date">${myTime}</li>
                 <li class="comments">${obj.author}</li>
             </ul>
         </div>

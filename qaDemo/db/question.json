@@ -5,12 +5,12 @@
     "content": "3213123123",
     "answers": [
       {
-        "author": "3213123123",
-        "content": "haha12312312",
+        "author": "作者",
+        "content": "第一个回答",
         "questionId": 1,
         "createTime": 1511453612,
         "id": 1
-      }
+        }
     ],
     "createTime": 1511453608,
     "id": 1
@@ -19,7 +19,16 @@
     "title": "111",
     "author": "111",
     "content": "11",
-    "answers": [],
+    "answers": [
+        {
+          "author": "第二个问题的第一个回答",
+          "content": "第二个回答",
+          "questionId": 2,
+          "createTime": 1511453612,
+          "id": 2
+          }
+
+    ],
     "createTime": 1511454385,
     "id": 2
   },

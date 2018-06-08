@@ -8,6 +8,10 @@ var es = (str) => {
     return document.querySelectorAll(str)
 }
 
+var myFind = (str, ele) => {
+    return ele.querySelector(str)
+}
+
 //自己封装的ajax函数
 var ajax = (method, path, callback, data) => {
     var xhr = new XMLHttpRequest()

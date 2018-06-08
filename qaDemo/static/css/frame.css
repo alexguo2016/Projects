@@ -39,3 +39,21 @@ a {
     position: relative;
     top: 5rem;
 }
+
+.item-parent {
+    display: flex;
+    justify-content: center;
+}
+.userAnswerBtn {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgba(153, 204, 255, 0.5);
+    border-radius: 5px;
+    height: 40px;
+    line-height: 20px;
+    outline: none;
+    cursor: pointer;
+}
+.comments {
+    cursor: pointer;
+}
