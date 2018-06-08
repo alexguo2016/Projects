@@ -44,7 +44,7 @@ a {
     display: flex;
     justify-content: center;
 }
-.userAnswerBtn {
+.userAnswerBtn, .userQuestionBtn {
     margin-bottom: 20px;
     padding: 10px;
     background-color: rgba(153, 204, 255, 0.5);

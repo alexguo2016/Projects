@@ -27,10 +27,20 @@ var noAnswered = {
     },
 }
 
+var askQuestion = {
+    path: '/askQuestion.html',
+    method: 'get',
+    func: (request, response) => {
+        var path = 'askQuestion.html'
+        route.sendHTML(path, response)
+    },
+}
+
 var routes = [
     index,
     answered,
     noAnswered,
+    askQuestion,
 ]
 
 module.exports.routes = routes

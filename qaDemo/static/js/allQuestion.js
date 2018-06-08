@@ -2,7 +2,7 @@ var showQuestions = () => {
     var method = 'get'
     var path = 'http://localhost:7000/api/question/all'
     ajax(method, path, (r) => {
-        var data = JSON.parse(r)
+        var data = r
         insertQuestions(data)
         insertAnswers(data)
     })
@@ -35,7 +35,7 @@ var insertAnswer = (q, id) => {
     for (var i = 0; i < qBoxes.length; i++) {
         var qBox = qBoxes[i]
         if (qBox.dataset.id == id) {
-            var answers = q.answers
+            var answers = q.answerData
             for (var j = 0; j < answers.length; j++) {
                 var ansItem = answers[j]
                 if (ansItem != undefined) {
@@ -50,7 +50,7 @@ var insertAnswer = (q, id) => {
 var insertTemplateQuestion = (obj, ele) => {
     var date = new Date(obj.createTime * 1000)
     var myTime = date.toLocaleDateString()
-    var answerNum = obj.answers.length
+    var answerNum = obj.answerData.length
     var t = `
     <div class="blog-container" data-id="${obj.id}">
         <div class="blog-header">

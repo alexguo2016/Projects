@@ -6,6 +6,7 @@
 
 var q = require('../model/question')
 var route = require('../util/routeUtil')
+var log = require('../util/logUtil')
 
 var add = {
     path: '/api/question/add',
@@ -42,7 +43,6 @@ var all = {
         var data = q.all()
         //处理数据, 而all请求并不需要处理数据
         // console.log('question, all next', typeof data)
-        data = JSON.parse(data)
         //将数据发送给浏览器
         route.sendJSON(data, response)
     },

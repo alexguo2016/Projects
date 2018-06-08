@@ -6,6 +6,7 @@ class Answer {
     constructor(model) {
         this.author = model.author || ''
         this.content = model.content || ''
+        this.title = model.title || ''
         this.qId = model.qId || ''
         this.createTime = Math.floor(new Date() / 1000)
     }
@@ -23,7 +24,7 @@ var answer = {
 
 answer.new = (model) => {
     var item = new Answer(model)
-    var data = this.data
+    var data = answer.data
 
     var lastId = data[data.length - 1]
     if (lastId === undefined) {
@@ -32,12 +33,12 @@ answer.new = (model) => {
         item.id = lastId + 1
     }
     data.push(item)
-    this.save()
+    answer.save()
     return item
 }
 
 answer.delete = (id) => {
-    var data = this.data
+    var data = answer.data
     for (var i = 0; i < data.length; i++) {
         var item = data[i]
         if (id === item[id]) {
@@ -53,7 +54,7 @@ answer.all = () => {
 }
 
 answer.save = () => {
-    var data = JSON.stringify(this.data, null, 2)
+    var data = JSON.stringify(answer.data, null, 2)
     fs.writeFile(qData, data, (error) => {
         if (error) {
             log('something worng in saving ANSWER JSON FILE!')

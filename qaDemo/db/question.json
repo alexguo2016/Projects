@@ -1,43 +1,18 @@
 [
   {
-    "title": "12312",
-    "author": "321312",
-    "content": "3213123123",
-    "answers": [
-      {
-        "author": "作者",
-        "content": "第一个回答",
-        "questionId": 1,
-        "createTime": 1511453612,
-        "id": 1
-        }
-    ],
-    "createTime": 1511453608,
-    "id": 1
+    "author": "用户A",
+    "content": "一个问题描述",
+    "title": "标题A",
+    "id": 1,
+    "answerData": [],
+    "createTime": 1528465890
   },
   {
-    "title": "111",
-    "author": "111",
-    "content": "11",
-    "answers": [
-        {
-          "author": "第二个问题的第一个回答",
-          "content": "第二个回答",
-          "questionId": 2,
-          "createTime": 1511453612,
-          "id": 2
-          }
-
-    ],
-    "createTime": 1511454385,
-    "id": 2
-  },
-  {
-    "title": "123",
-    "author": "123213",
-    "content": "123213",
-    "answers": [],
-    "createTime": 1511454496,
-    "id": 3
+    "author": "用户A",
+    "content": "一个问题描述",
+    "title": "标题A",
+    "id": 2,
+    "answerData": [],
+    "createTime": 1528465891
   }
 ]

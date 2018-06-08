@@ -31,17 +31,19 @@ var myClosest = (str, ele) => {
 var ajax = (method, path, callback, data) => {
     var xhr = new XMLHttpRequest()
     xhr.open(method, path, true)
+    xhr.setRequestHeader("Content-Type", "application/json")
     xhr.onreadystatechange = (response) => {
         if (xhr.readyState == 4) {
             if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
-                var r = xhr.responseText
-                callback(r)
+                var data = JSON.parse(xhr.response)
+                callback(data)
             }
         }
     }
     if (data == undefined) {
         data = null
     }
+    data = JSON.stringify(data)
     xhr.send(data)
 }
 //测试ajax函数

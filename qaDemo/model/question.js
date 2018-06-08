@@ -7,15 +7,17 @@ class Question {
     constructor(model) {
         this.author = model.author || ''
         this.content = model.content || ''
+        this.title = model.title || ''
         this.id = model.id || ''
         this.answerData = []
+        this.createTime = Math.floor(new Date() / 1000)
     }
 }
 
 var loadData = () => {
     var d = fs.readFileSync(qData, 'utf-8')
     var data = JSON.parse(d)
-    return d
+    return data
 }
 
 var question = {
@@ -23,22 +25,22 @@ var question = {
 }
 
 question.new = (model) => {
+    //传入一个代表问题的对象
     var item = new Question(model)
-    var data = this.data
-
-    var lastId = data[data.length - 1]
-    if (lastId === undefined) {
+    var data = question.data
+    var lastItem = data[data.length - 1]
+    if (lastItem === undefined) {
         item.id = 1
     } else {
-        item.id = lastId + 1
+        item.id = lastItem.id + 1
     }
     data.push(item)
-    this.save()
+    question.save()
     return item
 }
 
 question.delete = (id) => {
-    var data = this.data
+    var data = question.data
     for (var i = 0; i < data.length; i++) {
         var item = data[i]
         if (id === item[id]) {
@@ -51,6 +53,7 @@ question.delete = (id) => {
 
 question.all = () => {
     var q = question.data
+    log('question all--> question data', q)
     var a = ansModel.all()
     //获得问题列表以及回答列表之后, 根据问题id来将二者进行关联
     for (var i = 0; i < q.length; i++) {
@@ -69,7 +72,7 @@ question.all = () => {
 
 //和all类似, 只是根据id来查找question, 并且将相应的answer也加进去
 question.detail = (id) => {
-    var data = this.data
+    var data = question.data
     for (var i = 0; i < data.length; i++) {
         var item = data[i]
         if (item.id === id) {
@@ -90,7 +93,7 @@ question.detail = (id) => {
 }
 
 question.save = () => {
-    var data = JSON.stringify(this.data, null, 2)
+    var data = JSON.stringify(question.data, null, 2)
     fs.writeFile(qData, data, (error) => {
         if (error) {
             log('something worng in saving QUESTION JSON FILE!')
