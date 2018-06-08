@@ -77,7 +77,9 @@ var insertTemplateQuestion = (obj, ele) => {
         <div class="answerArea">
             <div class="blog-body item-parent">
                 <button class="userAnswerBtn">回答</button>
+                <br>
             </div>
+            <div class="answerForm"></div>
             <div class='answerBox myHidden'></div>
         </div>
     </div>

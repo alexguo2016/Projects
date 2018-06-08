@@ -53,7 +53,7 @@ question.delete = (id) => {
 
 question.all = () => {
     var q = question.data
-    log('question all--> question data', q)
+    // log('question all--> question data', q)
     var a = ansModel.all()
     //获得问题列表以及回答列表之后, 根据问题id来将二者进行关联
     for (var i = 0; i < q.length; i++) {

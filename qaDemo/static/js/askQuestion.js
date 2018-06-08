@@ -7,8 +7,8 @@ var bindAsk = () => {
             var questionInfos = getInfos(self)
             log(questionInfos)
             takeQuestion(questionInfos)
-            // alertMsg()
-            // clearInput(self)
+            alertMsg()
+            clearInput(self)
         }
     })
 }
@@ -18,9 +18,9 @@ var getInfos = (obj) => {
     //分别是  用户名, 标题, 问题描述
 
     //获取相应的DOM
-    var user = myClosest('.questionUser', obj)
-    var title = myClosest('.questionTitle', obj)
-    var content = myClosest('.questionDescription', obj)
+    var user = e('.questionUser')
+    var title = e('.questionTitle')
+    var content = e('.questionDescription')
 
     //提取各自的value
     var userName = user.value
