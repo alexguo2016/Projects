@@ -1,6 +1,7 @@
 var fs = require('fs')
 var log = require('../util/logUtil')
 var qData = '../qaDemo/db/question.json'
+var aData = '../qaDemo/db/aData.json'
 var ansModel = require('./answer')
 
 class Question {
@@ -89,7 +90,6 @@ question.detail = (id) => {
         }
     }
     return {}
-
 }
 
 question.save = () => {

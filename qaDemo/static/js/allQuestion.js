@@ -52,7 +52,7 @@ var insertTemplateQuestion = (obj, ele) => {
     var myTime = date.toLocaleDateString()
     var answerNum = obj.answerData.length
     var t = `
-    <div class="blog-container" data-id="${obj.id}">
+    <div class="blog-container myQuestion" data-id="${obj.id}">
         <div class="blog-header">
             <div class="blog-author--no-cover">
                 <h3>${obj.author}</h3>
@@ -79,7 +79,20 @@ var insertTemplateQuestion = (obj, ele) => {
                 <button class="userAnswerBtn">回答</button>
                 <br>
             </div>
-            <div class="answerForm"></div>
+            <div class="answerForm blog-body myHidden" data-id="${obj.id}">
+                <div class="blog-summary">
+                    <p>回答者</p>
+                    <input class="answerFormAuthor" type="text" placeholder="请不要输入敏感词汇">
+                    <p>您的见解</p>
+                    <textarea class="answerFormContent" rows="5" cols="70" placeholder="请不要输入敏感词汇"></textarea>
+                    <br>
+                </div>
+                <div class="userAnswer">
+                    <div class="blog-body">
+                        <button class="userAnswerSummit">发表</button>
+                    </div>
+                </div>
+            </div>
             <div class='answerBox myHidden'></div>
         </div>
     </div>

@@ -26,11 +26,11 @@ answer.new = (model) => {
     var item = new Answer(model)
     var data = answer.data
 
-    var lastId = data[data.length - 1]
-    if (lastId === undefined) {
+    var lastItem = data[data.length - 1]
+    if (lastItem === undefined) {
         item.id = 1
     } else {
-        item.id = lastId + 1
+        item.id = lastItem.id + 1
     }
     data.push(item)
     answer.save()
@@ -55,7 +55,7 @@ answer.all = () => {
 
 answer.save = () => {
     var data = JSON.stringify(answer.data, null, 2)
-    fs.writeFile(qData, data, (error) => {
+    fs.writeFile(aData, data, (error) => {
         if (error) {
             log('something worng in saving ANSWER JSON FILE!')
         } else {

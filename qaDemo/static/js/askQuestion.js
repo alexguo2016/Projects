@@ -5,7 +5,6 @@ var bindAsk = () => {
         var self = event.target
         if (self.classList.contains('userQuestionBtn')) {
             var questionInfos = getInfos(self)
-            log(questionInfos)
             takeQuestion(questionInfos)
             alertMsg()
             clearInput(self)

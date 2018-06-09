@@ -2,7 +2,6 @@ var fs = require('fs')
 
 var sendJSON = (data, response) => {
     var data = JSON.stringify(data, null, 2)
-    console.log('sendJSON', typeof data)
     response.send(data)
 }
 
