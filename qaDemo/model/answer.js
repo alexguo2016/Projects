@@ -67,7 +67,7 @@ answer.delete = (id) => {
             return d
         }
     }
-    return {}
+    return []
 }
 
 answer.all = () => {

@@ -104,7 +104,7 @@ var insertTemplateAnswer = (obj, ele) => {
     var date = new Date(obj.createTime * 1000)
     var myTime = date.toLocaleDateString()
     var t = `
-        <div class="answerItem&${obj.id}">
+        <div class="answerItem" id="${obj.id}">
             <div class="blog-body">
                 ${obj.content}
                 <br>
