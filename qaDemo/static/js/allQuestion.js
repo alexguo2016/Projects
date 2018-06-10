@@ -54,6 +54,9 @@ var insertTemplateQuestion = (obj, ele) => {
     var t = `
     <div class="blog-container myQuestion" data-id="${obj.id}">
         <div class="blog-header">
+            <div class="delQuesBtnBox">
+                <button class="delQuesBtn">删除问题</button>
+            </div>
             <div class="blog-author--no-cover">
                 <h3>${obj.author}</h3>
             </div>

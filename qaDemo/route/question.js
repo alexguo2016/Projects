@@ -28,7 +28,8 @@ var deleteQuestion = {
         //接收数据
         var data = request.body
         //处理数据
-        var item  = q.delete(id)
+        var id = request.params.id
+        var item  = q.delQuestion(id)
         //将数据发送给浏览器, 返回的是被删除的数据, 对象
         route.sendJSON(item, response)
     },

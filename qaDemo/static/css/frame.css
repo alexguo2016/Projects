@@ -73,3 +73,19 @@ a {
     outline: none;
     cursor: pointer;
 }
+
+.delQuesBtnBox {
+    text-align: right;
+}
+
+.delQuesBtn {
+    margin-right: 10%;
+    margin-top: 2%;
+    padding: 15px;
+    background-color: rgba(153, 204, 255, 0.5);
+    border-radius: 5px;
+    height: 20px;
+    line-height: 3px;
+    outline: none;
+    cursor: pointer;
+}

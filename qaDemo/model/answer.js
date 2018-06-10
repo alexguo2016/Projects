@@ -70,6 +70,21 @@ answer.delete = (id) => {
     return []
 }
 
+answer.cleanUp = (id) => {
+    var data = answer.data
+    for (var i = 0; i < data.length; i++) {
+        var item = data[i]
+        var delAnswers = []
+        if (id == item.qId) {
+            var d = data.splice(i, 1)
+            answer.save()
+            delAnswers.push(d)
+        }
+    }
+    return delAnswers
+}
+
+
 answer.all = () => {
     return answer.data
 }

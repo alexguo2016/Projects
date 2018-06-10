@@ -40,16 +40,17 @@ question.new = (model) => {
     return item
 }
 
-question.delete = (id) => {
+question.delQuestion = (id) => {
     var data = question.data
     for (var i = 0; i < data.length; i++) {
         var item = data[i]
-        if (id === item[id]) {
+        if (id == item.id) {
             var d = data.splice(i, 1)
+            question.save()
             return d
         }
     }
-    return {}
+    return []
 }
 
 question.all = () => {
@@ -69,27 +70,6 @@ question.all = () => {
         qItem.answerData = aItem
     }
     return q
-}
-
-//和all类似, 只是根据id来查找question, 并且将相应的answer也加进去
-question.detail = (id) => {
-    var data = question.data
-    for (var i = 0; i < data.length; i++) {
-        var item = data[i]
-        if (item.id === id) {
-            var a = ansModel.all()
-            var aItem = []
-            for (var j = 0; j < a.length; j++) {
-                var aEle = a[j]
-                if (aEle.qId === id) {
-                    aItem.push(aEle)
-                }
-            }
-            item.answerData = aItem
-            return item
-        }
-    }
-    return {}
 }
 
 question.save = () => {

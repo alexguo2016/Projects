@@ -30,6 +30,20 @@ var deleteAnswer = {
     },
 }
 
+var cleanUp = {
+    path: '/api/answer/cleanUp:id',
+    method: 'get',
+    func: (request, response) => {
+        //接收数据
+        var data = request.body
+        //处理数据
+        var id = request.params.id
+        var item  = a.cleanUp(id)
+        //将数据发送给浏览器, 返回的是被删除的数据, 对象
+        route.sendJSON(item, response)
+    },
+}
+
 var all = {
     path: '/api/answer/all',
     method: 'get',
@@ -47,6 +61,7 @@ var routes = [
     add,
     deleteAnswer,
     all,
+    cleanUp,
 ]
 
 module.exports.routes = routes
