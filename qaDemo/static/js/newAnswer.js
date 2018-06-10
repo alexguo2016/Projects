@@ -21,7 +21,6 @@ var bindSummitForm = () => {
             //ajax操作, 同时在回调函数中, 在页面插入相应的回答
             makeAnswer(formData)
             clearForm(self)
-            location.reload()
         }
     })
 }
@@ -56,10 +55,39 @@ var sendAnsewer = (obj) => {
     var path = 'http://localhost:7000/api/answer/add'
     var data = obj
     ajax(method, path, (r) => {
-        // log('send ok')
-        // var data = r
-        // insertAnswers(data)
+        //在页面上插入最近的回答
+        var lastAnswer = r
+        insertOneAnswer(lastAnswer)
     }, data)
+}
+
+var insertOneAnswer = (lastAnswer) => {
+    var ansItem = lastAnswer
+    var eleId = lastAnswer.qId
+    var questionEles = es('.myQuestion')
+    for (var i = 0; i < questionEles.length; i++) {
+        var q = questionEles[i]
+        if (q.dataset.id == eleId) {
+            insertTemplateAnswer(ansItem, q)
+            addAnswerNum(q)
+            toggleAnswerForm(q)
+        }
+    }
+}
+
+var addAnswerNum = (questionEle) => {
+    var q = questionEle
+    var ansNum = myFind('.numero', q)
+    var n = Number(ansNum.innerHTML)
+    n += 1
+    ansNum.innerHTML = n
+}
+
+var toggleAnswerForm = (questionEle) => {
+    var q = questionEle
+    var ansForm = myFind('.answerForm', q)
+    ansForm.classList.toggle('myHidden')
+
 }
 
 var clearForm = (obj) => {

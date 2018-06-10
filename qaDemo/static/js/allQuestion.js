@@ -104,15 +104,17 @@ var insertTemplateAnswer = (obj, ele) => {
     var date = new Date(obj.createTime * 1000)
     var myTime = date.toLocaleDateString()
     var t = `
-        <div class="blog-body">
-            ${obj.content}
-            <br>
-        </div>
-        <div class="blog-footer">
-            <ul>
-                <li class="published-date">${myTime}</li>
-                <li class="comments">回答者: ${obj.author}</li>
-            </ul>
+        <div class="answerItem${obj.id}">
+            <div class="blog-body">
+                ${obj.content}
+                <br>
+            </div>
+            <div class="blog-footer">
+                <ul>
+                    <li class="published-date">${myTime}</li>
+                    <li class="comments">回答者: ${obj.author}</li>
+                </ul>
+            </div>
         </div>
     `
     ele.insertAdjacentHTML('beforeend', t)
