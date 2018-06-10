@@ -16,3 +16,7 @@ qaDemo 一个包含后端的问答网站应用.
 下面演示怎么删除回答
 
 ![image](https://github.com/alexguo2016/Projects/blob/master/qaDemo/qaDemo-deleteAnswer.gif)
+
+下面演示怎么删除问题
+
+![image](https://github.com/alexguo2016/Projects/blob/master/qaDemo/qaDemo-deleteQuestion.gif)

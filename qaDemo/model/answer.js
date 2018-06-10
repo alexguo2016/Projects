@@ -75,12 +75,15 @@ answer.cleanUp = (id) => {
     for (var i = 0; i < data.length; i++) {
         var item = data[i]
         var delAnswers = []
+        var resAnswers = []
         if (id == item.qId) {
-            var d = data.splice(i, 1)
-            answer.save()
-            delAnswers.push(d)
+            delAnswers.push(item)
+        } else {
+            resAnswers.push(item)
         }
     }
+    answer.data = resAnswers || []
+    answer.save()
     return delAnswers
 }
 
