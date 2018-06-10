@@ -100,8 +100,6 @@ var clearForm = (obj) => {
     afc.value = ''
 }
 
-
-
 var __main = () => {
     bindShowForm()
     bindSummitForm()
