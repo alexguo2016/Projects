@@ -1,5 +1,6 @@
 var a = require('../model/answer')
 var route = require('../util/routeUtil')
+var log = require('../util/logUtil')
 
 var add = {
     path: '/api/answer/add',
@@ -21,6 +22,8 @@ var deleteAnswer = {
         //接收数据
         var data = request.body
         //处理数据
+        // log("request.params.id-->", request.params.id)
+        var id = request.params.id
         var item  = a.delete(id)
         //将数据发送给浏览器, 返回的是被删除的数据, 对象
         route.sendJSON(item, response)

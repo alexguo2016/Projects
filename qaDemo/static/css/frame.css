@@ -64,3 +64,12 @@ a {
 .answerForm {
     text-align: center;;
 }
+
+.delAnswer {
+    background-color: rgba(153, 204, 255, 0.5);
+    border-radius: 5px;
+    height: 20px;
+    line-height: 10px;
+    outline: none;
+    cursor: pointer;
+}

@@ -1,74 +1,18 @@
 [
   {
-    "author": "Json",
-    "content": "fine! and nice to meet you !",
+    "author": "dd",
+    "content": "fefef",
     "title": "",
     "qId": 1,
-    "createTime": 1528603249,
-    "id": 1
+    "createTime": 1528624493,
+    "id": "q1a2"
   },
   {
-    "author": "Ajax",
-    "content": "This program use Ajax and node.js to relate data",
+    "author": "sdf ",
+    "content": "asdf ",
     "title": "",
-    "qId": 1,
-    "createTime": 1528603283,
-    "id": 2
-  },
-  {
-    "author": "作者本人",
-    "content": "整个应用的前台和后台都是使用JavaScript原生来写的, 并没有使用其他框架.\n包括CSS框架也没有使用.",
-    "title": "",
-    "qId": 1,
-    "createTime": 1528603346,
-    "id": 3
-  },
-  {
-    "author": "作者本人",
-    "content": "接下来看看数据的储存",
-    "title": "",
-    "qId": 1,
-    "createTime": 1528603380,
-    "id": 4
-  },
-  {
-    "author": "到此结束",
-    "content": "End",
-    "title": "",
-    "qId": 1,
-    "createTime": 1528603411,
-    "id": 5
-  },
-  {
-    "author": "sdf",
-    "content": "asdf",
-    "title": "",
-    "qId": 1,
-    "createTime": 1528613978,
-    "id": 6
-  },
-  {
-    "author": "作者",
-    "content": "回答问题在这里输入详细信息, 点击发表之后, 可以在页面上面看到最新的回答.",
-    "title": "",
-    "qId": 3,
-    "createTime": 1528615218,
-    "id": 7
-  },
-  {
-    "author": "作者",
-    "content": "这个是第二个回答",
-    "title": "",
-    "qId": 3,
-    "createTime": 1528615233,
-    "id": 8
-  },
-  {
-    "author": "作者",
-    "content": "这是第三个回答",
-    "title": "",
-    "qId": 3,
-    "createTime": 1528615255,
-    "id": 9
+    "qId": 2,
+    "createTime": 1528624735,
+    "id": "q2a2"
   }
 ]

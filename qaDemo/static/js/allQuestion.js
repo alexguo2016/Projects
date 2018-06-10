@@ -112,7 +112,11 @@ var insertTemplateAnswer = (obj, ele) => {
             <div class="blog-footer">
                 <ul>
                     <li class="published-date">${myTime}</li>
-                    <li class="comments">回答者: ${obj.author}</li>
+                    <li class="comments">
+                        回答者: ${obj.author}
+                        <button class="delAnswer">delete</button>
+                    </li>
+
                 </ul>
             </div>
         </div>
