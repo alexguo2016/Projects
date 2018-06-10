@@ -1,6 +1,5 @@
 var getLastNum = (str, char) => {
     var index = str.indexOf(char) + 1
-    console.log('index', index)
     if (index > 0) {
         var ln = str.substr(index)
     } else {

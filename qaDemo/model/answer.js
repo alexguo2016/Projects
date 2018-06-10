@@ -28,18 +28,26 @@ answer.new = (model) => {
     var item = new Answer(model)
     var data = answer.data
 
-    var lastItem = data[data.length - 1]
     var qId = model.qId
+    var qIdAnsArr = []
+
+    for (var i = 0; i < data.length; i++) {
+        var ansItem = data[i]
+        if (ansItem.qId == qId) {
+            qIdAnsArr.push(ansItem)
+        }
+    }
+    // log('qIdAnsArr-->', qIdAnsArr)
 
     //data.id 的格式是'qnan'
-    if (item.id == undefined) {
+    var lastTargetAns = qIdAnsArr[qIdAnsArr.length - 1]
+
+    if(lastTargetAns == undefined) {
         var n = 1
-    } else {
-        var n = getLastNum(item.id, 'a')
-    }
-    if (lastItem === undefined) {
         item.id = `q${qId}a${n}`
     } else {
+        // log('lastTargetAns.id-->', lastTargetAns.id)
+        var n = Number(getLastNum(lastTargetAns.id, 'a'))
         n = n + 1
         item.id = `q${qId}a${n}`
     }
