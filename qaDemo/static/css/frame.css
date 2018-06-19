@@ -1,0 +1,91 @@
+ul, li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: center;
+}
+.navItem {
+    height: 4rem;
+    margin: 0 1rem;
+}
+.navBtns {
+    outline: none;
+    border: none;
+    background-color: #ccc;
+    width: 8rem;
+    height: 3rem;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 3rem;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    height: 5rem;
+    width: 100vw;
+    background-color: rgba(153, 204, 255, 0.5);
+}
+.main {
+    position: relative;
+    top: 5rem;
+}
+
+.item-parent {
+    text-align: center;
+}
+.userAnswerBtn, .userQuestionBtn, .userAnswerSummit {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgba(153, 204, 255, 0.5);
+    border-radius: 5px;
+    height: 40px;
+    line-height: 20px;
+    outline: none;
+    cursor: pointer;
+}
+.comments {
+    cursor: pointer;
+}
+
+.myHidden {
+    display: none;
+}
+
+.answerForm {
+    text-align: center;;
+}
+
+.delAnswer {
+    background-color: rgba(153, 204, 255, 0.5);
+    border-radius: 5px;
+    height: 20px;
+    line-height: 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+.delQuesBtnBox {
+    text-align: right;
+}
+
+.delQuesBtn {
+    margin-right: 10%;
+    margin-top: 2%;
+    padding: 15px;
+    background-color: rgba(153, 204, 255, 0.5);
+    border-radius: 5px;
+    height: 20px;
+    line-height: 3px;
+    outline: none;
+    cursor: pointer;
+}
