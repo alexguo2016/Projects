@@ -7,10 +7,17 @@ var all = {
     method: 'get',
     func: (request, response) => {
         //接收数据
-        var data = request.body
+        log('all')
+        var data = myForm.all()
         //处理数据
 
         //将数据发送给浏览器
         route.sendJSON(data, response)
     }
 }
+
+var routes = [
+    all,
+]
+
+module.exports.routes = routes

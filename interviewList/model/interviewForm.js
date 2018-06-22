@@ -1,8 +1,8 @@
 //先写model, 读取, 写入, 增删改查
 var fs = require('fs')
 var log = require('../util/logUtil')
-var savedData = '../db/savedData.json'
-var tempData = '../db/tempData.json'
+var savedData = '../interviewList/db/savedData.json'
+var tempData = '../interviewList/db/tempData.json'
 
 class InterviewForm {
     constructor(form) {
@@ -55,15 +55,9 @@ allForm.save = () => {
     })
 }
 
-
-
-
-
-
-
-
-
-
+allForm.all = () => {
+    return allForm.data
+}
 
 
 module.exports = allForm

@@ -6,13 +6,9 @@ var app = express()
 app.use(express.static('static'))
 app.use(bodyParser.json())
 
-// var routesList = [
-//     'index',
-//     'answer',
-//     'question',
-// ]
 var routesList = [
     'index',
+    'interviewForm',
 ]
 
 for (var i = 0; i < routesList.length; i++) {
