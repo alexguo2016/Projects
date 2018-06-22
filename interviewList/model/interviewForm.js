@@ -16,7 +16,7 @@ class InterviewForm {
         this.famiStatus = form.famiStatus || ''
         this.jobObjected = form.jobObjected || ''
         //候选人声明是一个boolean
-        this.declaration = iForm.declaration || ''
+        this.declaration = form.declaration || ''
     }
 }
 
