@@ -6,10 +6,13 @@ var app = express()
 app.use(express.static('static'))
 app.use(bodyParser.json())
 
+// var routesList = [
+//     'index',
+//     'answer',
+//     'question',
+// ]
 var routesList = [
     'index',
-    'answer',
-    'question',
 ]
 
 for (var i = 0; i < routesList.length; i++) {
