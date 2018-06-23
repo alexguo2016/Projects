@@ -1,0 +1,19 @@
+/*  修改日历控件类型 */
+::-webkit-datetime-edit { padding: 1px;}  /*控制编辑区域的*/
+::-webkit-datetime-edit-fields-wrapper { background-color: #fff; }    /*控制年月日这个区域的*/
+::-webkit-datetime-edit-text { color: #333; padding: 0 .5em; }  /*这是控制年月日之间的斜线或短横线的*/
+::-webkit-datetime-edit-year-field { color: #333; }    /*控制年文字, 如2013四个字母占据的那片地方*/   
+::-webkit-datetime-edit-month-field { color: #333; }    /*控制月份*/
+::-webkit-datetime-edit-day-field { color: #333; }    /*控制具体日子*/
+::-webkit-inner-spin-button { visibility: hidden; }    /*这是控制上下小箭头的*/
+::-webkit-calendar-picker-indicator {      /*这是控制下拉小箭头的*/
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-shadow: inset 0 1px #fff, 0 1px #eee;
+    background-color: #eee;
+    background-image: -webkit-linear-gradient(top, #f0f0f0, #e6e6e6);
+    color: #666;
+}
+::-webkit-clear-button {    /*控制清除按钮*/
+
+}

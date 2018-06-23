@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>new interview</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+          <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+          <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+          <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+          <style type="text/css">
+              html {
+                  font-size: 12px;
+              }
+              .formMain input, .formMain select {
+                  width: 100%;
+                  border-radius: 5px;
+                  outline: none;
+                  border: 1px solid #bbb;
+              }
+              .formMain input {
+                  padding: 6px 12px;
+              }
+              .info_gray {
+                  background-color: #ccc;
+                  border-radius: 5px;
+              }
+              .sectionTitle {
+                  font-size: 2rem;
+              }
+              .mySection {
+                  color: #777;
+              }
+
+              .formMain input[type="radio"] {
+                  padding: 0;
+                  margin: 0;
+                  width:inherit;
+              }
+
+              .myResetPadding {
+                  padding-left: 6px!important;
+                  padding-right: 6px!important;
+              }
+
+              /* ::-webkit-inner-spin-button {display: none;} */
+              ::-webkit-clear-button {display: none;}
+              ::-webkit-calendar-picker-indicator {
+                  font-size: 10px;
+              }
+
+          </style>
+    </head>
+    <body>
+        <div class="myForm">
+            <div class="formTitle">
+                <h1>面试表格</h1>
+            </div>
+            <div class="formHead container">
+                <div class="col-sm-12 alert alert-dark">
+                    <div class="arrivalTimeBox">
+                        <span>您的到达时间</span>
+                        <span class="arrivalTime">2018-6-22 下午1: 30</span>
+                    </div>
+                    <div class="tipsBox">
+                        <span class="tips ">
+                            为了科学地进行结构化面试， 我们全过程采用无纸化面试， 请按照以下指引填写完善您的资料。
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="formMain container">
+                <div class="normalInfos row">
+                    <div class="nameBox col-sm-3">
+                        <div class="name">
+                            <label class="font-weight-bold">中文名：</label>
+                            <input name="nameInput" type="text">
+                        </div>
+                    </div>
+                    <div class="genderBox col-sm-3">
+                        <div class="gender">
+                            <label class="font-weight-bold">性别：</label>
+                            <select class="form-control" >
+                                <option>--</option>
+                                <option>男</option>
+                                <option>女</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="nationBox col-sm-3">
+                        <div class="nation">
+                            <label class="font-weight-bold">民族：</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="nativeBox col-sm-3">
+                        <div class="native">
+                            <label class="font-weight-bold">籍贯：</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="birthdayBox col-sm-3">
+                        <div class="birthday">
+                            <label class="font-weight-bold">生日：</label>
+                            <input type="date">
+                            <!-- 不得已的做法, 不规范的做法 -->
+                            <!-- <div class="">
+                                <input type="text" id="date" readonly="readonly" placeholder="年/月/日"/>
+                                <input type="date" class="mydate" onchange="aaa(this)"/>
+                            </div> -->
+
+                        </div>
+                    </div>
+                    <div class="telBox col-sm-3">
+                        <div class="tel">
+                            <label class="font-weight-bold">联系电话：</label>
+                            <input type="tel">
+                        </div>
+                    </div>
+                    <div class="addressBox col-sm-6">
+                        <div class="address">
+                            <label class="font-weight-bold">详细地址：</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="workYearsBox col-sm-3">
+                        <label class="font-weight-bold">工作年限：</label>
+                        <div class="workYears input-group mb-3">
+                            <input type="number" min="0" class="form-control" placeholder="全职工作年限">
+                            <div class="input-group-append">
+                            <span class="input-group-text">年</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="marryBox col-sm-3">
+                        <label class="font-weight-bold">婚姻状况：</label>
+                        <div class="marry">
+                            <!-- 需要flex布局 -->
+                            <form class="d-inline-flex">
+                                <label class="radio p-3 myResetPadding">
+                                    <input type="radio" name="optradio">
+                                    未婚
+                                </label>
+                                <label class="radio p-3 myResetPadding">
+                                    <input type="radio" name="optradio">
+                                    已婚
+                                </label>
+                                <label class="radio p-3 myResetPadding">
+                                    <input type="radio" name="optradio">
+                                    离异
+                                </label>
+                                <label class="radio p-3 myResetPadding">
+                                    <input type="radio" name="optradio">
+                                    丧偶
+                                </label>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="birthBox col-sm-3">
+                        <label class="font-weight-bold" >生育状况：</label>
+                        <div class="birth">
+                            <!-- 需要flex布局 -->
+                            <form class="d-inline-flex">
+                              <label class="radio p-3 myResetPadding">
+                                  <input type="radio" name="optradio" >
+                                  未育
+                              </label>
+                              <label class="radio p-3 myResetPadding">
+                                  <input type="radio" name="optradio" >
+                                  在孕
+                              </label>
+                              <label class="radio p-3 myResetPadding">
+                                  <input type="radio" name="optradio" >
+                                  已育
+                              </label>
+
+                            </form>
+                        </div>
+                    </div>
+                    <div class="birthPlayBox col-sm-3">
+                        <label class="font-weight-bold">婚育计划：</label>
+                        <div class="birthPlan">
+                            <!-- <label for="sel1">单选下拉菜单:</label> -->
+                            <select class="form-control" >
+                                <option>--</option>
+                                <option>暂无</option>
+                                <option>一年内有生育计划</option>
+                                <option>两年内有生育计划</option>
+                                <option>两年内未有生育计划</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="eduExps">
+                    <div class="title row">
+                        <div class="col-sm-12 mySection">
+                             <span class="sectionTitle">教育经历</span>
+                             <span class="">从最高其填写， 可填至中学。</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="lables row">
+                            <div class="col-sm-3 font-weight-bold">
+                                教育时间
+                            </div>
+                            <div class="col-sm-2 font-weight-bold">
+                                性质
+                            </div>
+                            <div class="col-sm-2 font-weight-bold">
+                                学历
+                            </div>
+                            <div class="col-sm-3 font-weight-bold">
+                                学校名称
+                            </div>
+                            <div class="col-sm-2 font-weight-bold">
+                                专业
+                            </div>
+                    </div>
+                    <hr>
+                    <div class="row detail" data-id="1">
+                        <div class="col-sm-3">
+                            <span class="from">
+                                <input type="date" class="eduInput">
+                            </span>
+                            <span>到</span>
+                            <span class="to">
+                                <input type="date" class="eduInput">
+                            </span>
+                        </div>
+                        <div class="col-sm-2">
+                            <select class="form-control" >
+                                <option>--</option>
+                                <option>公立</option>
+                                <option>私营</option>
+                                <option>国外</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2">
+                            <select class="form-control" >
+                                <option>--</option>
+                                <option>研究生以及以上学位</option>
+                                <option>本科</option>
+                                <option>大专</option>
+                                <option>高中或中专</option>
+                                <option>其他</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" name="" value="">
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="text" name="" value="">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="">
+                        第二学历
+                    </div>
+                    <hr>
+                    <div class="">
+                        第三学历
+                    </div>
+                </div>
+                <br>
+                <div class="workExps">
+                    <div class="title row">
+                        <div class="col-sm-12 mySection">
+                             <span class="sectionTitle">工作/实习经历</span>
+                             <span class="">从最近起填写。</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="lables row">
+                        <div class="col-sm-3 font-weight-bold">
+                            工作时间
+                        </div>
+                        <div class="col-sm-1 font-weight-bold">
+                            性质
+                        </div>
+                        <div class="col-sm-2 font-weight-bold">
+                            单位名称
+                        </div>
+                        <div class="col-sm-2 font-weight-bold">
+                            部门/职位
+                        </div>
+                        <div class="col-sm-1 font-weight-bold">
+                            状态
+                        </div>
+                        <div class="col-sm-1 font-weight-bold">
+                            薪资范围
+                        </div>
+                        <div class="col-sm-2 font-weight-bold">
+                            证明人及电话
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row detail" data-id="1">
+                        <div class="col-sm-3">
+                            <span class="from">
+                                <input type="date">
+                            </span>
+                            <span>到</span>
+                            <span class="to">
+                                <input type="date">
+                            </span>
+                        </div>
+                        <div class="col-sm-1">
+                            <!-- <label for="sel1">单选下拉菜单:</label> -->
+                            <select class="form-control">
+                                <option>国有企业</option>
+                                <option>事业单位</option>
+                                <option>私营单位</option>
+                                <option>其他</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="text" name="" value="">
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="text" name="" value="">
+                        </div>
+                        <div class="col-sm-1">
+                            <select class="form-control">
+                                <option>--</option>
+                                <option>在职</option>
+                                <option>离职</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-1">
+                            <input type="text" placeholder="选填">
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="text" placeholder="必填">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="">
+                        工作详细2
+                    </div>
+                    <hr>
+                    <div class="">
+                        工作详细3
+                    </div>
+                    <hr>
+                    <div class="">
+                        工作详细4
+                    </div>
+                </div>
+                <br>
+                <div class="famiStatus">
+                    <div class="title row">
+                        <div class="col-sm-12">
+                             <span class="">家庭背景</span>
+                             <span class=""></span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="lables row">
+                        <div class="col-sm-2 font-weight-bold">
+                            关系
+                        </div>
+                        <div class="col-sm-3 font-weight-bold">
+                            姓名
+                        </div>
+                        <div class="col-sm-4 font-weight-bold">
+                            单位及职业
+                        </div>
+                        <div class="col-sm-3 font-weight-bold">
+                            联系电话
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row detail" data-id="1">
+                        <div class="col-sm-2">
+                            <input type="text" placeholder="父/母/丈夫/妻子">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" name="" value="">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" placeholder="必填">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" placeholder="必填">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="">
+                        家庭成员2
+                    </div>
+                </div>
+                <br>
+                <div class="jobObjected">
+                    <div class="title row">
+                        <div class="col-sm-12 mySection">
+                             <span class="sectionTitle">应聘情况</span>
+                        </div>
+                    </div>
+                    <div class="lables row">
+                        <div class="col-sm-3 font-weight-bold">
+                            应聘职能：
+                        </div>
+                        <div class="col-sm-2 font-weight-bold">
+                            应聘性质：
+                        </div>
+                        <div class="col-sm-2 font-weight-bold">
+                            自我定位：
+                        </div>
+                        <div class="col-sm-2 font-weight-bold">
+                            薪资要求：
+                        </div>
+                        <div class="col-sm-3 font-weight-bold">
+                            可到岗时间
+                        </div>
+                    </div>
+                    <div class="row detail" data-id="1">
+                        <div class="col-sm-3">
+                            <select class="" name="" size="6">
+                                <optgroup label="技术部">
+                                    <option value="">PHP工程师</option>
+                                    <option value="">前端工程师</option>
+                                    <option value="">技术培训生</option>
+                                    <option value="">后端工程师</option>
+                                    <option value="">高级工程师</option>
+                                </optgroup>
+                                <optgroup label="销售部">
+                                    <option value="">销售顾问</option>
+                                    <option value="">客服代表</option>
+                                    <option value="">销售经理</option>
+                                </optgroup>
+                                <optgroup label="人事部">
+                                    <option value="">HR</option>
+                                    <option value="">薪酬管理</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="col-sm-2">
+                            <select class="form-control">
+                                <option>全职</option>
+                                <option>兼职</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2">
+                            <select class="form-control">
+                                <option>培训生/实习生</option>
+                                <option>初级工程师</option>
+                                <option>中级工程师</option>
+                                <option>高级工程师</option>
+                                <option>总监/CTO</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="text" placeholder="可填">
+                        </div>
+                        <div class="col-sm-3">
+                            <select class="form-control">
+                                <option>随时</option>
+                                <option>一周以内</option>
+                                <option>两周以内</option>
+                                <option>一个月以内</option>
+                                <option>其他</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="formFooter container">
+                <div class="footerTitle alert alert-dark">
+                    <h2>候选人声明</h2>
+                </div>
+                <hr>
+                <div class="declarationBox">
+                    <input type="checkbox" class="declaration">
+                    <span class="">
+                        本人提供的一切个人信息、 教育背景、 工作经历、 家庭背景等全部属实。 本人充分了解上述资料的真实性是双方能达成工作契约、 合作关系的前提条件。 如有虚假或瞒报， 属于严重的违规问题， 公司有权单方解除劳动关系或其它形式签订的工作合作契约； 公司因此所遭受的损失， 本人有赔偿义务。
+                    </span>
+                </div>
+            </div>
+            <br>
+        </div>
+        <div class="container final text-right">
+            <button type="button" name="button" class="finalSumit btn btn-primary">若以上信息无误, 请确认</button>
+        </div>
+        <br>
+    </body>
+</html>

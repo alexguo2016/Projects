@@ -9,9 +9,29 @@ var index = {
     }
 }
 
+var test = {
+    path: '/test',
+    method: 'get',
+    func: (request, response) => {
+        var path = 'test.html'
+        route.sendHTML(path, response)
+    }
+}
+
+var newInterview = {
+    path: '/newInterview',
+    method: 'get',
+    func: (request, response) => {
+        var path = 'newInterview.html'
+        route.sendHTML(path, response)
+    }
+}
+
 
 var routes = [
     index,
+    test,
+    newInterview,
 ]
 
 module.exports.routes = routes

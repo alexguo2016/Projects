@@ -1,32 +1,29 @@
 [
   {
-    "author": "speaker",
-    "content": "option1",
-    "title": "",
-    "qId": 1,
-    "createTime": 1528640752,
-    "id": "q1a1"
-  },
-  {
-    "normalInfos": "",
-    "maritalStatus": "",
-    "eduExps": "",
-    "workExps": "",
-    "famiStatus": "",
-    "jobObjected": "",
-    "declaration": "",
-    "id": "q1a11"
+    "normalInfos": {
+      "name": "测试对象"
+    },
+    "maritalStatus": {},
+    "eduExps": {},
+    "workExps": {},
+    "famiStatus": {},
+    "jobObjected": {},
+    "declaration": false,
+    "createTime": "2018-6-22 12:39:48",
+    "id": 1
   },
   {
     "normalInfos": {
-      "name": "sdfsdf"
+      "name": "测试对象"
     },
-    "maritalStatus": "",
-    "eduExps": "",
-    "workExps": "",
-    "famiStatus": "",
-    "jobObjected": "",
-    "declaration": "",
-    "id": "q1a111"
+    "maritalStatus": {},
+    "eduExps": {},
+    "workExps": {},
+    "famiStatus": {},
+    "jobObjected": {},
+    "declaration": false,
+    "createTime": "2018-6-22 12:45:34",
+    "lastModified": "2018-6-22 12:45:34",
+    "id": 2
   }
 ]

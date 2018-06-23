@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #div{
+        width: 500px;
+        height: 300px;
+        border: 2px solid #ccc;
+        position: absolute;
+    }
+    .datebox{
+        width: 150px;
+        position: relative;
+        height: 24px;
+        margin: 100px;
+    }
+    #date{
+        position: absolute;
+        left: 1px;
+        top: 1px;
+        z-index: 50;
+        width: 100px;
+        height: 100%;
+        height: 22px;
+        border: 1px solid transparent;
+    }
+    .mydate{
+        width: 150px;
+        height: 24px;
+        border: 1px solid #CCC;
+    }
+</style>
+</head>
+<body>
+    <div class="datebox">
+        <input type="text" id="date" readonly="readonly"/>
+        <input type="date" class="mydate" onchange="aaa(this)"/>
+    </div>
+    <script type="text/javascript">
+    function aaa(obj){
+        document.getElementById('date').value = obj.value;
+    }
+    </script>
+</body>
+</html>
