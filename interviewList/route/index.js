@@ -4,7 +4,7 @@ var index = {
     path: '/',
     method: 'get',
     func: (request, response) => {
-        var path = 'index.html'
+        var path = 'newInterview.html'
         route.sendHTML(path, response)
     }
 }
