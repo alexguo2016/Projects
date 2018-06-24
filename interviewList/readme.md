@@ -11,4 +11,4 @@ qaDemo 一个包含后端的问答网站应用.
 
 接下来演示怎么 添加评价  查看所有评价  删除候选人
 
-![image](https://github.com/alexguo2016/Projects/blob/master/interviewList/添加评价  查看所有评价  删除候选人.gif)
+![image](https://github.com/alexguo2016/Projects/blob/master/interviewList/添加评价-查看所有评价-删除候选人.gif)
