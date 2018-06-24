@@ -1,29 +1,246 @@
 [
   {
     "normalInfos": {
-      "name": "测试对象"
+      "name": "测试用例-路人A",
+      "gender": "男",
+      "nation": "汉族",
+      "native": "广东广州",
+      "birthday": "1990-12-11",
+      "tel": "13415421645",
+      "address": "广东省广州市海珠区海珠湖附近",
+      "workYears": "2",
+      "marry": "未婚",
+      "birth": "未育",
+      "birthPlan": "两年内有生育计划"
     },
-    "maritalStatus": {},
-    "eduExps": {},
-    "workExps": {},
-    "famiStatus": {},
-    "jobObjected": {},
-    "declaration": false,
-    "createTime": "2018-6-22 12:39:48",
+    "eduExps": [
+      {
+        "studyBegin": "2010-09-01",
+        "studyEnd": "2012-07-31",
+        "nature": "公立",
+        "degree": "大专",
+        "school": "软件测试学院",
+        "major": "软件测试"
+      },
+      {
+        "studyBegin": "2004-09-01",
+        "studyEnd": "2008-07-01",
+        "nature": "公立",
+        "degree": "高中或中专",
+        "school": "海珠区第一中学",
+        "major": ""
+      },
+      {
+        "studyBegin": "2000-09-01",
+        "studyEnd": "2004-07-01",
+        "nature": "私营",
+        "degree": "其他",
+        "school": "美国加州大学",
+        "major": "食品专业"
+      }
+    ],
+    "workExps": [
+      {
+        "studyBegin": "2012-07-02",
+        "studyEnd": "2014-07-01",
+        "nature": "国有企业",
+        "workPlace": "食品厂",
+        "department": "经理",
+        "workStatus": "离职",
+        "salary": "7000",
+        "linkman": "经理A/1254658468"
+      },
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "workPlace": "",
+        "department": "",
+        "workStatus": "--",
+        "salary": "",
+        "linkman": ""
+      },
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "workPlace": "",
+        "department": "",
+        "workStatus": "--",
+        "salary": "",
+        "linkman": ""
+      },
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "workPlace": "",
+        "department": "",
+        "workStatus": "--",
+        "salary": "",
+        "linkman": ""
+      }
+    ],
+    "famiStatus": [
+      {
+        "relationship": "父",
+        "name": "测试用例Aの父",
+        "career": "务农",
+        "tel": "14528467321"
+      },
+      {
+        "relationship": "母",
+        "name": "测试用例Aの母",
+        "career": "务农",
+        "tel": "12457316467"
+      }
+    ],
+    "jobObjected": {
+      "position": "高级工程师",
+      "nature": "全职",
+      "selfPosition": "总监/CTO",
+      "salary": "20000",
+      "arrivalTime": "2018/6/24--21:45:12"
+    },
+    "declaration": true,
+    "createTime": "2018-6-24 21:50:59",
+    "judgement": [
+      {
+        "id": 1,
+        "author": "总经理A",
+        "jud": "他是一个好人",
+        "createTime": "2018-06-24T13:53:25.427Z"
+      },
+      {
+        "id": 1,
+        "author": "总经理B",
+        "jud": "真的是好人",
+        "createTime": "2018-06-24T13:53:37.592Z"
+      },
+      {
+        "id": 1,
+        "author": "测试组员A",
+        "jud": "测试测试",
+        "createTime": "2018-06-24T14:02:17.943Z"
+      }
+    ],
+    "arrivalTime": "2018/6/24--21:45:12",
     "id": 1
   },
   {
     "normalInfos": {
-      "name": "测试对象"
+      "name": "测试用例ZZ",
+      "gender": "--",
+      "nation": "",
+      "native": "",
+      "birthday": "",
+      "tel": "",
+      "address": "",
+      "workYears": "",
+      "marry": "",
+      "birth": "",
+      "birthPlan": "--"
     },
-    "maritalStatus": {},
-    "eduExps": {},
-    "workExps": {},
-    "famiStatus": {},
-    "jobObjected": {},
-    "declaration": false,
-    "createTime": "2018-6-22 12:45:34",
-    "lastModified": "2018-6-22 12:45:34",
-    "id": 2
+    "eduExps": [
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "degree": "--",
+        "school": "",
+        "major": ""
+      },
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "degree": "--",
+        "school": "",
+        "major": ""
+      },
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "degree": "--",
+        "school": "",
+        "major": ""
+      }
+    ],
+    "workExps": [
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "workPlace": "",
+        "department": "",
+        "workStatus": "--",
+        "salary": "",
+        "linkman": ""
+      },
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "workPlace": "",
+        "department": "",
+        "workStatus": "--",
+        "salary": "",
+        "linkman": ""
+      },
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "workPlace": "",
+        "department": "",
+        "workStatus": "--",
+        "salary": "",
+        "linkman": ""
+      },
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "workPlace": "",
+        "department": "",
+        "workStatus": "--",
+        "salary": "",
+        "linkman": ""
+      }
+    ],
+    "famiStatus": [
+      {
+        "relationship": "",
+        "name": "",
+        "career": "",
+        "tel": ""
+      },
+      {
+        "relationship": "",
+        "name": "",
+        "career": "",
+        "tel": ""
+      }
+    ],
+    "jobObjected": {
+      "position": "高级工程师",
+      "nature": "兼职",
+      "selfPosition": "初级工程师",
+      "salary": "",
+      "arrivalTime": "2018/6/24--22:0:9"
+    },
+    "declaration": true,
+    "createTime": "2018-6-24 22:00:34",
+    "judgement": [
+      {
+        "id": 4,
+        "author": "评价专员AAA",
+        "jud": "现在开始评级",
+        "createTime": "2018-06-24T14:02:43.768Z"
+      }
+    ],
+    "arrivalTime": "2018/6/24--22:0:9",
+    "id": 4
   }
 ]

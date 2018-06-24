@@ -6,19 +6,22 @@ var tempData = '../interviewList/db/tempData.json'
 
 class InterviewForm {
     constructor(form) {
-        //normalInfos包含候选人名字, 性别, 民族, 籍贯, 生日, 联系电话, 详细地址以及工作年限, 是一个对象
+        //normalInfos包含候选人名字, 性别, 民族, 籍贯, 生日, 联系电话, 婚姻状况, 详细地址以及工作年限, 是一个对象
         this.normalInfos = form.normalInfos || {}
-        //martalStatus包含婚姻状况, 生育状况以及生育计划, 是一个对象
-        this.maritalStatus = form.maritalStatus || {}
-        //教育经历, 工作经历, 家庭背景, 应聘情况都是一个对象
-        this.eduExps = form.eduExps || {}
-        this.workExps = form.workExps || {}
-        this.famiStatus = form.famiStatus || {}
+        //教育经历, 工作经历, 家庭背景都是一个对象数组
+        this.eduExps = form.eduExps || []
+        this.workExps = form.workExps || []
+        this.famiStatus = form.famiStatus || []
+        //应聘情况是一个对象
         this.jobObjected = form.jobObjected || {}
         //候选人声明是一个boolean
         this.declaration = form.declaration || false
         //表单录入的时间
         this.createTime = new Date().toLocaleString()
+        //记录面试官的评价
+        this.judgement = form.judgement || []
+        //记录到底公司时间
+        this.arrivalTime = form.arrivalTime || ''
     }
 }
 
@@ -55,6 +58,43 @@ allForm.save = () => {
 
         }
     })
+}
+
+allForm.check = (id) => {
+    var data = allForm.data
+    for (var i = 0; i < data.length; i++) {
+        var item = data[i]
+        if (item.id == id) {
+            return item
+        }
+    }
+    return {}
+}
+
+allForm.delForm = (id) => {
+    var data = allForm.data
+    for (var i = 0; i < data.length; i++) {
+        var item = data[i]
+        if (item.id == id) {
+            data.splice(i, 1)
+            allForm.save()
+            return item
+        }
+    }
+    return {}
+}
+
+allForm.updataForm = (id, form) => {
+    var data = allForm.data
+    for (var i = 0; i < data.length; i++) {
+        var item = data[i]
+        if (item.id == id) {
+            data[i] = form
+            allForm.save()
+            return data[i]
+        }
+    }
+    return {}
 }
 
 allForm.all = () => {

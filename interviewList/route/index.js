@@ -27,11 +27,21 @@ var newInterview = {
     }
 }
 
+var check = {
+    path: '/check',
+    method: 'get',
+    func: (request, response) => {
+        var path = 'check.html'
+        route.sendHTML(path, response)
+    }
+}
+
 
 var routes = [
     index,
     test,
     newInterview,
+    check,
 ]
 
 module.exports.routes = routes

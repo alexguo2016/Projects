@@ -1,67 +1,46 @@
 <!DOCTYPE html>
-<html lang="zh" dir="ltr">
+<html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>new interview</title>
+        <title>信息录入</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
           <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
           <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
           <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
           <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-
-          <style type="text/css">
-              html {
-                  font-size: 12px;
-              }
-              .formMain input, .formMain select {
-                  width: 100%;
-                  border-radius: 5px;
-                  outline: none;
-                  border: 1px solid #bbb;
-              }
-              .formMain input {
-                  padding: 6px 12px;
-              }
-              .info_gray {
-                  background-color: #ccc;
-                  border-radius: 5px;
-              }
-              .sectionTitle {
-                  font-size: 2rem;
-              }
-              .mySection {
-                  color: #777;
-              }
-
-              .formMain input[type="radio"] {
-                  padding: 0;
-                  margin: 0;
-                  width:inherit;
-              }
-
-              .myResetPadding {
-                  padding-left: 6px!important;
-                  padding-right: 6px!important;
-              }
-
-              /* ::-webkit-inner-spin-button {display: none;} */
-              ::-webkit-clear-button {display: none;}
-              ::-webkit-calendar-picker-indicator {
-                  font-size: 10px;
-              }
-
-          </style>
+          <link rel="stylesheet" href="css/InterviewForm.css">
     </head>
     <body>
         <div class="myForm">
             <div class="formTitle">
-                <h1>面试表格</h1>
+                <nav class="navbar navbar-expand-sm bg-info navbar-dark">
+                <!-- Brand/logo -->
+                    <a class="navbar-brand" href="newInterview">
+                        <h1>西洋汇</h1>
+                        <!-- <span class="small">面试表格</span> -->
+                    </a>
+
+                    <!-- Links -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="newInterview">
+                                新增面试
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="check">
+                                查看候选人
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
+            <br>
             <div class="formHead container">
                 <div class="col-sm-12 alert alert-dark">
-                    <div class="arrivalTimeBox">
+                    <div>
                         <span>您的到达时间</span>
-                        <span class="arrivalTime">2018-6-22 下午1: 30</span>
+                        <span class="arrivalTime">2018-6-24 09:58:19</span>
                     </div>
                     <div class="tipsBox">
                         <span class="tips ">
@@ -82,9 +61,9 @@
                         <div class="gender">
                             <label class="font-weight-bold">性别：</label>
                             <select class="form-control" >
-                                <option>--</option>
-                                <option>男</option>
-                                <option>女</option>
+                                <option value="--">--</option>
+                                <option value="男">男</option>
+                                <option value="女">女</option>
                             </select>
                         </div>
                     </div>
@@ -109,7 +88,6 @@
                                 <input type="text" id="date" readonly="readonly" placeholder="年/月/日"/>
                                 <input type="date" class="mydate" onchange="aaa(this)"/>
                             </div> -->
-
                         </div>
                     </div>
                     <div class="telBox col-sm-3">
@@ -139,18 +117,18 @@
                             <!-- 需要flex布局 -->
                             <form class="d-inline-flex">
                                 <label class="radio p-3 myResetPadding">
-                                    <input type="radio" name="optradio">
+                                    <input type="radio" name="optradio" value="未婚">
                                     未婚
                                 </label>
                                 <label class="radio p-3 myResetPadding">
-                                    <input type="radio" name="optradio">
+                                    <input type="radio" name="optradio" value="已婚">
                                     已婚
                                 </label>
-                                <label class="radio p-3 myResetPadding">
+                                <label class="radio p-3 myResetPadding" value="离异">
                                     <input type="radio" name="optradio">
                                     离异
                                 </label>
-                                <label class="radio p-3 myResetPadding">
+                                <label class="radio p-3 myResetPadding" value="丧偶">
                                     <input type="radio" name="optradio">
                                     丧偶
                                 </label>
@@ -163,15 +141,15 @@
                             <!-- 需要flex布局 -->
                             <form class="d-inline-flex">
                               <label class="radio p-3 myResetPadding">
-                                  <input type="radio" name="optradio" >
+                                  <input type="radio" name="optradio" value="未育">
                                   未育
                               </label>
                               <label class="radio p-3 myResetPadding">
-                                  <input type="radio" name="optradio" >
+                                  <input type="radio" name="optradio" value="在孕">
                                   在孕
                               </label>
                               <label class="radio p-3 myResetPadding">
-                                  <input type="radio" name="optradio" >
+                                  <input type="radio" name="optradio" value="已育">
                                   已育
                               </label>
 
@@ -219,8 +197,8 @@
                             </div>
                     </div>
                     <hr>
-                    <div class="row detail" data-id="1">
-                        <div class="col-sm-3">
+                    <div class="row detail MYTEST" data-id="1">
+                        <div class="col-sm-3 timeBox">
                             <span class="from">
                                 <input type="date" class="eduInput">
                             </span>
@@ -229,7 +207,43 @@
                                 <input type="date" class="eduInput">
                             </span>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-2 natureBox">
+                            <select class="form-control" >
+                                <option value="--">--</option>
+                                <option value="公立">公立</option>
+                                <option value="私营">私营</option>
+                                <option value="国外">国外</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2 degreeBox">
+                            <select class="form-control" >
+                                <option value="--">--</option>
+                                <option value="研究生以及以上学位">研究生以及以上学位</option>
+                                <option value="本科">本科</option>
+                                <option value="大专">大专</option>
+                                <option value="高中或中专">高中或中专</option>
+                                <option value="其他">其他</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3 schoolBox">
+                            <input type="text" >
+                        </div>
+                        <div class="col-sm-2 majorBox">
+                            <input type="text" >
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row detail" data-id="2">
+                        <div class="col-sm-3 timeBox">
+                            <span class="from">
+                                <input type="date" class="eduInput">
+                            </span>
+                            <span>到</span>
+                            <span class="to">
+                                <input type="date" class="eduInput">
+                            </span>
+                        </div>
+                        <div class="col-sm-2 natureBox">
                             <select class="form-control" >
                                 <option>--</option>
                                 <option>公立</option>
@@ -237,7 +251,7 @@
                                 <option>国外</option>
                             </select>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-2 degreeBox">
                             <select class="form-control" >
                                 <option>--</option>
                                 <option>研究生以及以上学位</option>
@@ -247,20 +261,48 @@
                                 <option>其他</option>
                             </select>
                         </div>
-                        <div class="col-sm-3">
-                            <input type="text" name="" value="">
+                        <div class="col-sm-3 schoolBox">
+                            <input type="text" >
                         </div>
-                        <div class="col-sm-2">
-                            <input type="text" name="" value="">
+                        <div class="col-sm-2 majorBox">
+                            <input type="text" >
                         </div>
                     </div>
                     <hr>
-                    <div class="">
-                        第二学历
-                    </div>
-                    <hr>
-                    <div class="">
-                        第三学历
+                    <div class="row detail" data-id="3">
+                        <div class="col-sm-3 timeBox">
+                            <span class="from">
+                                <input type="date" class="eduInput">
+                            </span>
+                            <span>到</span>
+                            <span class="to">
+                                <input type="date" class="eduInput">
+                            </span>
+                        </div>
+                        <div class="col-sm-2 natureBox">
+                            <select class="form-control" >
+                                <option>--</option>
+                                <option>公立</option>
+                                <option>私营</option>
+                                <option>国外</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2 degreeBox">
+                            <select class="form-control" >
+                                <option>--</option>
+                                <option>研究生以及以上学位</option>
+                                <option>本科</option>
+                                <option>大专</option>
+                                <option>高中或中专</option>
+                                <option>其他</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3 schoolBox">
+                            <input type="text" >
+                        </div>
+                        <div class="col-sm-2 majorBox">
+                            <input type="text" >
+                        </div>
                     </div>
                 </div>
                 <br>
@@ -306,46 +348,158 @@
                                 <input type="date">
                             </span>
                         </div>
-                        <div class="col-sm-1">
+                        <div class="col-sm-1 natureBox">
                             <!-- <label for="sel1">单选下拉菜单:</label> -->
                             <select class="form-control">
-                                <option>国有企业</option>
-                                <option>事业单位</option>
-                                <option>私营单位</option>
-                                <option>其他</option>
+                                <option value="--">--</option>
+                                <option value="国有企业">国有企业</option>
+                                <option value="事业单位">事业单位</option>
+                                <option value="私营单位">私营单位</option>
+                                <option value="其他">其他</option>
                             </select>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-2 workPlaceBox">
                             <input type="text" name="" value="">
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-2 departmentBox">
                             <input type="text" name="" value="">
                         </div>
-                        <div class="col-sm-1">
+                        <div class="col-sm-1 workStatusBox">
                             <select class="form-control">
-                                <option>--</option>
-                                <option>在职</option>
-                                <option>离职</option>
+                                <option value="--">--</option>
+                                <option value="在职">在职</option>
+                                <option value="离职">离职</option>
                             </select>
                         </div>
-                        <div class="col-sm-1">
-                            <input type="text" placeholder="选填">
+                        <div class="col-sm-1 salaryBox">
+                            <input type="number" placeholder="选填">
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-2 linkmanBox">
                             <input type="text" placeholder="必填">
                         </div>
                     </div>
                     <hr>
-                    <div class="">
-                        工作详细2
+                    <div class="row detail" data-id="2">
+                        <div class="col-sm-3">
+                            <span class="from">
+                                <input type="date">
+                            </span>
+                            <span>到</span>
+                            <span class="to">
+                                <input type="date">
+                            </span>
+                        </div>
+                        <div class="col-sm-1 natureBox">
+                            <!-- <label for="sel1">单选下拉菜单:</label> -->
+                            <select class="form-control">
+                                <option value="--">--</option>
+                                <option value="国有企业">国有企业</option>
+                                <option value="事业单位">事业单位</option>
+                                <option value="私营单位">私营单位</option>
+                                <option value="其他">其他</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2 workPlaceBox">
+                            <input type="text" name="" value="">
+                        </div>
+                        <div class="col-sm-2 departmentBox">
+                            <input type="text" name="" value="">
+                        </div>
+                        <div class="col-sm-1 workStatusBox">
+                            <select class="form-control">
+                                <option value="--">--</option>
+                                <option value="在职">在职</option>
+                                <option value="离职">离职</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-1 salaryBox">
+                            <input type="number" placeholder="选填">
+                        </div>
+                        <div class="col-sm-2 linkmanBox">
+                            <input type="text" placeholder="必填">
+                        </div>
                     </div>
                     <hr>
-                    <div class="">
-                        工作详细3
+                    <div class="row detail" data-id="3">
+                        <div class="col-sm-3">
+                            <span class="from">
+                                <input type="date">
+                            </span>
+                            <span>到</span>
+                            <span class="to">
+                                <input type="date">
+                            </span>
+                        </div>
+                        <div class="col-sm-1 natureBox">
+                            <!-- <label for="sel1">单选下拉菜单:</label> -->
+                            <select class="form-control">
+                                <option value="--">--</option>
+                                <option value="国有企业">国有企业</option>
+                                <option value="事业单位">事业单位</option>
+                                <option value="私营单位">私营单位</option>
+                                <option value="其他">其他</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2 workPlaceBox">
+                            <input type="text" name="" value="">
+                        </div>
+                        <div class="col-sm-2 departmentBox">
+                            <input type="text" name="" value="">
+                        </div>
+                        <div class="col-sm-1 workStatusBox">
+                            <select class="form-control">
+                                <option value="--">--</option>
+                                <option value="在职">在职</option>
+                                <option value="离职">离职</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-1 salaryBox">
+                            <input type="number" placeholder="选填">
+                        </div>
+                        <div class="col-sm-2 linkmanBox">
+                            <input type="text" placeholder="必填">
+                        </div>
                     </div>
                     <hr>
-                    <div class="">
-                        工作详细4
+                    <div class="row detail" data-id="4">
+                        <div class="col-sm-3">
+                            <span class="from">
+                                <input type="date">
+                            </span>
+                            <span>到</span>
+                            <span class="to">
+                                <input type="date">
+                            </span>
+                        </div>
+                        <div class="col-sm-1 natureBox">
+                            <!-- <label for="sel1">单选下拉菜单:</label> -->
+                            <select class="form-control">
+                                <option value="--">--</option>
+                                <option value="国有企业">国有企业</option>
+                                <option value="事业单位">事业单位</option>
+                                <option value="私营单位">私营单位</option>
+                                <option value="其他">其他</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2 workPlaceBox">
+                            <input type="text" name="" value="">
+                        </div>
+                        <div class="col-sm-2 departmentBox">
+                            <input type="text" name="" value="">
+                        </div>
+                        <div class="col-sm-1 workStatusBox">
+                            <select class="form-control">
+                                <option value="--">--</option>
+                                <option value="在职">在职</option>
+                                <option value="离职">离职</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-1 salaryBox">
+                            <input type="number" placeholder="选填">
+                        </div>
+                        <div class="col-sm-2 linkmanBox">
+                            <input type="text" placeholder="必填">
+                        </div>
                     </div>
                 </div>
                 <br>
@@ -373,22 +527,33 @@
                     </div>
                     <hr>
                     <div class="row detail" data-id="1">
-                        <div class="col-sm-2">
+                        <div class="col-sm-2 relationshipBox">
                             <input type="text" placeholder="父/母/丈夫/妻子">
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 nameBox">
                             <input type="text" name="" value="">
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-4 careerBox">
                             <input type="text" placeholder="必填">
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 telBox">
                             <input type="text" placeholder="必填">
                         </div>
                     </div>
                     <hr>
-                    <div class="">
-                        家庭成员2
+                    <div class="row detail" data-id="2">
+                        <div class="col-sm-2 relationshipBox">
+                            <input type="text" placeholder="父/母/丈夫/妻子">
+                        </div>
+                        <div class="col-sm-3 nameBox">
+                            <input type="text" name="" value="">
+                        </div>
+                        <div class="col-sm-4 careerBox">
+                            <input type="text" placeholder="必填">
+                        </div>
+                        <div class="col-sm-3 telBox">
+                            <input type="text" placeholder="必填">
+                        </div>
                     </div>
                 </div>
                 <br>
@@ -416,64 +581,64 @@
                         </div>
                     </div>
                     <div class="row detail" data-id="1">
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 positionBox">
                             <select class="" name="" size="6">
                                 <optgroup label="技术部">
-                                    <option value="">PHP工程师</option>
-                                    <option value="">前端工程师</option>
-                                    <option value="">技术培训生</option>
-                                    <option value="">后端工程师</option>
-                                    <option value="">高级工程师</option>
+                                    <option value="PHP工程师">PHP工程师</option>
+                                    <option value="前端工程师">前端工程师</option>
+                                    <option value="技术培训生">技术培训生</option>
+                                    <option value="后端工程师">后端工程师</option>
+                                    <option value="高级工程师">高级工程师</option>
                                 </optgroup>
                                 <optgroup label="销售部">
-                                    <option value="">销售顾问</option>
-                                    <option value="">客服代表</option>
-                                    <option value="">销售经理</option>
+                                    <option value="销售顾问">销售顾问</option>
+                                    <option value="客服代表">客服代表</option>
+                                    <option value="销售经理">销售经理</option>
                                 </optgroup>
                                 <optgroup label="人事部">
-                                    <option value="">HR</option>
-                                    <option value="">薪酬管理</option>
+                                    <option value="HR">HR</option>
+                                    <option value="薪酬管理">薪酬管理</option>
                                 </optgroup>
                             </select>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-2 natureBox">
                             <select class="form-control">
-                                <option>全职</option>
-                                <option>兼职</option>
+                                <option value="全职">全职</option>
+                                <option value="兼职">兼职</option>
                             </select>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-2 selfPositionBox">
                             <select class="form-control">
-                                <option>培训生/实习生</option>
-                                <option>初级工程师</option>
-                                <option>中级工程师</option>
-                                <option>高级工程师</option>
-                                <option>总监/CTO</option>
+                                <option value="培训生/实习生">培训生/实习生</option>
+                                <option value="初级工程师">初级工程师</option>
+                                <option value="中级工程师">中级工程师</option>
+                                <option value="高级工程师">高级工程师</option>
+                                <option value="总监/CTO">总监/CTO</option>
                             </select>
                         </div>
-                        <div class="col-sm-2">
-                            <input type="text" placeholder="可填">
+                        <div class="col-sm-2 salaryBox">
+                            <input type="number" placeholder="可填">
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 arrivalTimeBox">
                             <select class="form-control">
-                                <option>随时</option>
-                                <option>一周以内</option>
-                                <option>两周以内</option>
-                                <option>一个月以内</option>
-                                <option>其他</option>
+                                <option value="随时">随时</option>
+                                <option value="一周以内">一周以内</option>
+                                <option value="两周以内">两周以内</option>
+                                <option value="一个月以内">一个月以内</option>
+                                <option value="其他">其他</option>
                             </select>
                         </div>
                     </div>
                 </div>
             </div>
             <br>
-            <div class="formFooter container">
+            <div class="formFooter container declaration">
                 <div class="footerTitle alert alert-dark">
                     <h2>候选人声明</h2>
                 </div>
                 <hr>
                 <div class="declarationBox">
-                    <input type="checkbox" class="declaration">
+                    <input type="checkbox">
                     <span class="">
                         本人提供的一切个人信息、 教育背景、 工作经历、 家庭背景等全部属实。 本人充分了解上述资料的真实性是双方能达成工作契约、 合作关系的前提条件。 如有虚假或瞒报， 属于严重的违规问题， 公司有权单方解除劳动关系或其它形式签订的工作合作契约； 公司因此所遭受的损失， 本人有赔偿义务。
                     </span>
@@ -482,8 +647,45 @@
             <br>
         </div>
         <div class="container final text-right">
-            <button type="button" name="button" class="finalSumit btn btn-primary">若以上信息无误, 请确认</button>
+            <!-- <button type="button" name="button" class="finalSumit btn btn-primary">若以上信息无误, 请确认</button> -->
+            <button type="button" name="button" class="btn btn-primary finalCheck" data-toggle="modal" data-target="#myModal">确保以上信息无误, 请确认</button>
         </div>
         <br>
+        <div class="container">
+        <!-- 模态框 -->
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+
+                    <!-- 模态框头部 -->
+                        <div class="modal-header">
+                        <h4 class="modal-title">请确认信息</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                    <!-- 模态框主体 -->
+                        <div class="modal-body">
+                        模态框内容..
+                        </div>
+
+                    <!-- 模态框底部 -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary finalSumit" data-dismiss="modal">确认</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script src="js/myTool.js" charset="utf-8"></script>
+        <script src="js/getNormalInfos.js" charset="utf-8"></script>
+        <script src="js/getEduExps.js" charset="utf-8"></script>
+        <script src="js/getWorkExps.js" charset="utf-8"></script>
+        <script src="js/getFamiStatus.js" charset="utf-8"></script>
+        <script src="js/getJobObjected.js" charset="utf-8"></script>
+        <script src="js/getDeclaration.js" charset="utf-8"></script>
+        <script src="js/addInterviewer.js" charset="utf-8"></script>
     </body>
 </html>

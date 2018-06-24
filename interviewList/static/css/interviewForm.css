@@ -1,0 +1,44 @@
+
+html {
+    font-size: 12px;
+}
+.formMain input, .formMain select {
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #bbb;
+}
+.formMain input {
+    padding: 6px 12px;
+}
+.info_gray {
+    background-color: #ccc;
+    border-radius: 5px;
+}
+.sectionTitle {
+    font-size: 2rem;
+}
+.mySection {
+    color: #777;
+}
+
+.formMain input[type="radio"] {
+    padding: 0;
+    margin: 0;
+    width:inherit;
+}
+
+.myResetPadding {
+    padding-left: 6px!important;
+    padding-right: 6px!important;
+}
+
+/* ::-webkit-inner-spin-button {display: none;} */
+::-webkit-clear-button {display: none;}
+::-webkit-calendar-picker-indicator {
+    font-size: 10px;
+}
+
+.detail {
+    margin-top: 20px;
+}

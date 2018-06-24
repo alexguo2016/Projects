@@ -27,9 +27,43 @@ var add = {
     },
 }
 
+var check = {
+    path: '/api/form/check:id',
+    method: 'get',
+    func: (request, response) => {
+        var id = request.params.id
+        var item = myForm.check(id)
+        route.sendJSON(item, response)
+    }
+}
+
+var delForm = {
+    path: '/api/form/del:id',
+    method: 'get',
+    func: (request, response) => {
+        var id = request.params.id
+        var item = myForm.delForm(id)
+        route.sendJSON(item, response)
+    }
+}
+
+var updataForm = {
+    path: '/api/form/update:id',
+    method: 'post',
+    func: (request, response) => {
+        var id = request.params.id
+        var data = request.body
+        var item = myForm.updataForm(id, data)
+        route.sendJSON(item, response)
+    }
+}
+
 var routes = [
     all,
     add,
+    check,
+    delForm,
+    updataForm,
 ]
 
 module.exports.routes = routes
