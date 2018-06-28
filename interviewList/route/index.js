@@ -36,12 +36,22 @@ var check = {
     }
 }
 
+var check_vue = {
+    path: '/check_vue',
+    method: 'get',
+    func: (request, response) => {
+        var path = 'check_vue.html'
+        route.sendHTML(path, response)
+    }
+}
+
 
 var routes = [
     index,
     test,
     newInterview,
     check,
+    check_vue,
 ]
 
 module.exports.routes = routes

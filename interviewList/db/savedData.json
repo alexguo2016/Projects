@@ -129,26 +129,26 @@
   },
   {
     "normalInfos": {
-      "name": "测试用例ZZ",
-      "gender": "--",
-      "nation": "",
-      "native": "",
-      "birthday": "",
-      "tel": "",
-      "address": "",
-      "workYears": "",
-      "marry": "",
-      "birth": "",
-      "birthPlan": "--"
+      "name": "候选人A",
+      "gender": "男",
+      "nation": "汉族",
+      "native": "北京密云",
+      "birthday": "1990-12-05",
+      "tel": "13145214557",
+      "address": "北京密云水库底",
+      "workYears": "5",
+      "marry": "已婚",
+      "birth": "未育",
+      "birthPlan": "一年内有生育计划"
     },
     "eduExps": [
       {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "degree": "--",
-        "school": "",
-        "major": ""
+        "studyBegin": "2009-09-01",
+        "studyEnd": "2013-07-01",
+        "nature": "公立",
+        "degree": "本科",
+        "school": "北京大学",
+        "major": "哲学"
       },
       {
         "studyBegin": "",
@@ -169,14 +169,14 @@
     ],
     "workExps": [
       {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "workPlace": "",
-        "department": "",
-        "workStatus": "--",
-        "salary": "",
-        "linkman": ""
+        "studyBegin": "2013-07-02",
+        "studyEnd": "2018-06-02",
+        "nature": "国有企业",
+        "workPlace": "北京密云水库",
+        "department": "水库长",
+        "workStatus": "离职",
+        "salary": "50000",
+        "linkman": "水库长B/18845674658"
       },
       {
         "studyBegin": "",
@@ -211,36 +211,48 @@
     ],
     "famiStatus": [
       {
-        "relationship": "",
-        "name": "",
-        "career": "",
-        "tel": ""
+        "relationship": "父",
+        "name": "候选人A的父亲",
+        "career": "公务员",
+        "tel": "18025412589"
       },
       {
-        "relationship": "",
-        "name": "",
-        "career": "",
-        "tel": ""
+        "relationship": "母",
+        "name": "候选人B的母亲",
+        "career": "公务员",
+        "tel": "13452155487"
       }
     ],
     "jobObjected": {
-      "position": "高级工程师",
-      "nature": "兼职",
-      "selfPosition": "初级工程师",
-      "salary": "",
-      "arrivalTime": "2018/6/24--22:0:9"
+      "position": "薪酬管理",
+      "nature": "全职",
+      "selfPosition": "总监/CTO",
+      "salary": "50000",
+      "arrivalTime": "2018/6/28--12:51:7"
     },
     "declaration": true,
-    "createTime": "2018-6-24 22:00:34",
+    "createTime": "2018-6-28 12:55:04",
     "judgement": [
       {
-        "id": 4,
-        "author": "评价专员AAA",
-        "jud": "现在开始评级",
-        "createTime": "2018-06-24T14:02:43.768Z"
+        "id": 2,
+        "author": "某迷妹",
+        "jud": "好帅气!",
+        "createTime": "2018-06-28T04:55:27.929Z"
+      },
+      {
+        "id": 2,
+        "author": "某迷妹B",
+        "jud": "炒鸡帅",
+        "createTime": "2018-06-28T04:55:41.576Z"
+      },
+      {
+        "id": 2,
+        "author": "老司机A",
+        "jud": "真~老司机",
+        "createTime": "2018-06-28T04:55:56.880Z"
       }
     ],
-    "arrivalTime": "2018/6/24--22:0:9",
-    "id": 4
+    "arrivalTime": "2018/6/28--12:51:7",
+    "id": 2
   }
 ]
