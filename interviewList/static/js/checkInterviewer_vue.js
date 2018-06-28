@@ -1,12 +1,10 @@
 //
 var ib_v = new Vue({
     el: '#interBox_Vue',
-    data: {},
+    data: {
+        arr: '',
+    },
     methods: {
-        getItems: function() {
-            //调用ajax, 获取数据
-
-        },
         insertInterviewer: function(obj) {
             var id = obj.id
             var name = obj.normalInfos.name
@@ -82,10 +80,10 @@ var ib_v = new Vue({
             var that = this
             var callback = (data) => {
                 //获得数据
-                var allForm = data
-                //插入表格
-                this.insertAll(allForm)
-                // that.data = data
+                // var allForm = data
+                // //插入表格
+                // this.insertAll(allForm)
+                that.arr = data
                 // log('that.data', data)
             }
             ajax(method, path, callback)
