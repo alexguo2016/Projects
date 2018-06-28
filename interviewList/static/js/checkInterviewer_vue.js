@@ -34,6 +34,23 @@ var ib_v = new Vue({
             var time = `${d}--${h}:${m}:${s}`
             return time
         },
+        apiDelData: function(id, outer) {
+            var method = 'get'
+            var path = 'http://localhost:7000/api/form/del' + id
+            var callback = () => {
+                outer.remove()
+            }
+            ajax(method, path, callback)
+        },
+        formDel: function(event) {
+            var self = event.target
+            if (self.classList.contains('delForm')) {
+                var idbox = myClosest('.idBox', self)
+                var outer = myClosest('.detail', self)
+                var id = Number(idbox.innerHTML)
+                this.apiDelData(id, outer)
+            }
+        },
     },
     mounted: function() {
         this.getAllForm()
