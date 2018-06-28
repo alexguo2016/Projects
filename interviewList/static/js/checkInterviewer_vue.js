@@ -15,7 +15,7 @@ var ib_v = new Vue({
                 for (var i = 0; i < data.length; i++) {
                     var jud = that.arr[i].judgement
                     var last = jud.length - 1
-                    if (last >= 1) {
+                    if (last >= 0) {
                         jud[last].createTime = that.formatTime(jud[last].createTime)
                     } else {
                         jud[last] = {}

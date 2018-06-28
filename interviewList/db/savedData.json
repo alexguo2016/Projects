@@ -1,206 +1,6 @@
 [
   {
     "normalInfos": {
-      "name": "测试用例-路人A",
-      "gender": "男",
-      "nation": "汉族",
-      "native": "广东广州",
-      "birthday": "1990-12-11",
-      "tel": "13415421645",
-      "address": "广东省广州市海珠区海珠湖附近",
-      "workYears": "2",
-      "marry": "未婚",
-      "birth": "未育",
-      "birthPlan": "两年内有生育计划"
-    },
-    "eduExps": [
-      {
-        "studyBegin": "2010-09-01",
-        "studyEnd": "2012-07-31",
-        "nature": "公立",
-        "degree": "大专",
-        "school": "软件测试学院",
-        "major": "软件测试"
-      },
-      {
-        "studyBegin": "2004-09-01",
-        "studyEnd": "2008-07-01",
-        "nature": "公立",
-        "degree": "高中或中专",
-        "school": "海珠区第一中学",
-        "major": ""
-      },
-      {
-        "studyBegin": "2000-09-01",
-        "studyEnd": "2004-07-01",
-        "nature": "私营",
-        "degree": "其他",
-        "school": "美国加州大学",
-        "major": "食品专业"
-      }
-    ],
-    "workExps": [
-      {
-        "studyBegin": "2012-07-02",
-        "studyEnd": "2014-07-01",
-        "nature": "国有企业",
-        "workPlace": "食品厂",
-        "department": "经理",
-        "workStatus": "离职",
-        "salary": "7000",
-        "linkman": "经理A/1254658468"
-      },
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "workPlace": "",
-        "department": "",
-        "workStatus": "--",
-        "salary": "",
-        "linkman": ""
-      },
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "workPlace": "",
-        "department": "",
-        "workStatus": "--",
-        "salary": "",
-        "linkman": ""
-      },
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "workPlace": "",
-        "department": "",
-        "workStatus": "--",
-        "salary": "",
-        "linkman": ""
-      }
-    ],
-    "famiStatus": [
-      {
-        "relationship": "父",
-        "name": "测试用例Aの父",
-        "career": "务农",
-        "tel": "14528467321"
-      },
-      {
-        "relationship": "母",
-        "name": "测试用例Aの母",
-        "career": "务农",
-        "tel": "12457316467"
-      }
-    ],
-    "jobObjected": {
-      "position": "高级工程师",
-      "nature": "全职",
-      "selfPosition": "总监/CTO",
-      "salary": "20000",
-      "arrivalTime": "2018/6/24--21:45:12"
-    },
-    "declaration": true,
-    "createTime": "2018-6-24 21:50:59",
-    "judgement": [
-      {
-        "id": 1,
-        "author": "总经理A",
-        "jud": "他是一个好人",
-        "createTime": "2018-06-24T13:53:25.427Z"
-      },
-      {
-        "id": 1,
-        "author": "总经理B",
-        "jud": "真的是好人",
-        "createTime": "2018-06-24T13:53:37.592Z"
-      },
-      {
-        "id": 1,
-        "author": "测试组员A",
-        "jud": "测试测试",
-        "createTime": "2018-06-24T14:02:17.943Z"
-      },
-      {
-        "id": 1,
-        "author": "vue 测试",
-        "jud": "vue 测试",
-        "createTime": "2018-06-28T09:20:07.729Z"
-      },
-      {
-        "id": 1,
-        "author": "测试",
-        "jud": "1234",
-        "createTime": "2018-06-28T09:20:42.337Z"
-      },
-      {
-        "id": 1,
-        "author": "asdf",
-        "jud": "asdzxc",
-        "createTime": "2018-06-28T09:24:18.970Z"
-      },
-      {
-        "id": 1,
-        "author": "fdgh ",
-        "jud": "dfgh",
-        "createTime": "2018-06-28T09:31:19.602Z"
-      },
-      {
-        "id": 1,
-        "author": "只需",
-        "jud": "去玩儿",
-        "createTime": "2018-06-28T12:22:08.902Z"
-      },
-      {
-        "id": 1,
-        "author": "呃呃呃",
-        "jud": "飞飞飞",
-        "createTime": "2018-06-28T12:22:53.797Z"
-      },
-      {
-        "id": 1,
-        "author": "234",
-        "jud": "123",
-        "createTime": "2018-06-28T12:25:18.917Z"
-      },
-      {
-        "id": 1,
-        "author": "aaa",
-        "jud": "aaa",
-        "createTime": "2018-06-28T12:27:01.445Z"
-      },
-      {
-        "id": 1,
-        "author": "sdf",
-        "jud": "sdf",
-        "createTime": "2018-06-28T12:28:48.220Z"
-      },
-      {
-        "id": 1,
-        "author": "ddd",
-        "jud": "ddd",
-        "createTime": "2018-06-28T12:29:59.469Z"
-      },
-      {
-        "id": 1,
-        "author": "eee",
-        "jud": "eee",
-        "createTime": "2018-06-28T12:30:19.780Z"
-      },
-      {
-        "id": 1,
-        "author": "dfg",
-        "jud": "dfg",
-        "createTime": "2018-06-28T12:33:46.372Z"
-      }
-    ],
-    "arrivalTime": "2018/6/24--21:45:12",
-    "id": 1
-  },
-  {
-    "normalInfos": {
       "name": "候选人A",
       "gender": "男",
       "nation": "汉族",
@@ -432,8 +232,265 @@
     },
     "declaration": false,
     "createTime": "2018-6-28 17:16:01",
-    "judgement": [],
+    "judgement": [
+      {
+        "id": 3,
+        "author": "ABC",
+        "jud": "第一次评价",
+        "createTime": "2018-06-28T12:50:56.356Z"
+      },
+      {
+        "id": 3,
+        "author": "狗肉馆",
+        "jud": "电饭锅",
+        "createTime": "2018-06-28T12:52:41.052Z"
+      },
+      {
+        "id": 3,
+        "author": "法国红酒",
+        "jud": "法国红酒",
+        "createTime": "2018-06-28T12:53:43.804Z"
+      }
+    ],
     "arrivalTime": "2018/6/28--17:15:54",
     "id": 3
+  },
+  {
+    "normalInfos": {
+      "name": "测试2",
+      "gender": "--",
+      "nation": "",
+      "native": "",
+      "birthday": "",
+      "tel": "",
+      "address": "",
+      "workYears": "",
+      "marry": "",
+      "birth": "",
+      "birthPlan": "--"
+    },
+    "eduExps": [
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "degree": "--",
+        "school": "",
+        "major": ""
+      },
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "degree": "--",
+        "school": "",
+        "major": ""
+      },
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "degree": "--",
+        "school": "",
+        "major": ""
+      }
+    ],
+    "workExps": [
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "workPlace": "",
+        "department": "",
+        "workStatus": "--",
+        "salary": "",
+        "linkman": ""
+      },
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "workPlace": "",
+        "department": "",
+        "workStatus": "--",
+        "salary": "",
+        "linkman": ""
+      },
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "workPlace": "",
+        "department": "",
+        "workStatus": "--",
+        "salary": "",
+        "linkman": ""
+      },
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "workPlace": "",
+        "department": "",
+        "workStatus": "--",
+        "salary": "",
+        "linkman": ""
+      }
+    ],
+    "famiStatus": [
+      {
+        "relationship": "",
+        "name": "",
+        "career": "",
+        "tel": ""
+      },
+      {
+        "relationship": "",
+        "name": "",
+        "career": "",
+        "tel": ""
+      }
+    ],
+    "jobObjected": {
+      "position": "",
+      "nature": "全职",
+      "selfPosition": "培训生/实习生",
+      "salary": "",
+      "arrivalTime": "2018/6/28--20:53:57"
+    },
+    "declaration": false,
+    "createTime": "2018-6-28 20:54:29",
+    "judgement": [
+      {
+        "id": 4,
+        "author": "飞飞飞",
+        "jud": "呃呃呃",
+        "createTime": "2018-06-28T12:54:40.044Z"
+      },
+      {
+        "id": 4,
+        "author": "asdf",
+        "jud": "行政处罚",
+        "createTime": "2018-06-28T12:55:15.708Z"
+      }
+    ],
+    "arrivalTime": "2018/6/28--20:53:57",
+    "id": 4
+  },
+  {
+    "normalInfos": {
+      "name": "份额嗯嗯嗯",
+      "gender": "--",
+      "nation": "",
+      "native": "",
+      "birthday": "",
+      "tel": "",
+      "address": "",
+      "workYears": "",
+      "marry": "",
+      "birth": "",
+      "birthPlan": "--"
+    },
+    "eduExps": [
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "degree": "--",
+        "school": "",
+        "major": ""
+      },
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "degree": "--",
+        "school": "",
+        "major": ""
+      },
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "degree": "--",
+        "school": "",
+        "major": ""
+      }
+    ],
+    "workExps": [
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "workPlace": "",
+        "department": "",
+        "workStatus": "--",
+        "salary": "",
+        "linkman": ""
+      },
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "workPlace": "",
+        "department": "",
+        "workStatus": "--",
+        "salary": "",
+        "linkman": ""
+      },
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "workPlace": "",
+        "department": "",
+        "workStatus": "--",
+        "salary": "",
+        "linkman": ""
+      },
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "workPlace": "",
+        "department": "",
+        "workStatus": "--",
+        "salary": "",
+        "linkman": ""
+      }
+    ],
+    "famiStatus": [
+      {
+        "relationship": "",
+        "name": "",
+        "career": "",
+        "tel": ""
+      },
+      {
+        "relationship": "",
+        "name": "",
+        "career": "",
+        "tel": ""
+      }
+    ],
+    "jobObjected": {
+      "position": "",
+      "nature": "全职",
+      "selfPosition": "培训生/实习生",
+      "salary": "",
+      "arrivalTime": "2018/6/28--20:55:20"
+    },
+    "declaration": false,
+    "createTime": "2018-6-28 20:55:28",
+    "judgement": [
+      {
+        "id": 5,
+        "author": "反反复复吩咐",
+        "jud": "反反复复分",
+        "createTime": "2018-06-28T12:55:39.068Z"
+      }
+    ],
+    "arrivalTime": "2018/6/28--20:55:20",
+    "id": 5
   }
 ]

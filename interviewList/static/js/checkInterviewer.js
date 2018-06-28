@@ -2,7 +2,7 @@
 var insertInterviewer = (obj) => {
     var id = obj.id
     var name = obj.normalInfos.name
-    var time = obj.createTime
+    var firstTime = obj.createTime
     var career = obj.jobObjected.position
     var judge = obj.judgement
     if (judge.length != 0) {
@@ -19,7 +19,7 @@ var insertInterviewer = (obj) => {
         var item = {}
         var author = '暂无'
         var jud = ''
-        var time = ''
+        var time = '暂无'
     }
     var t = `
         <div class="">
@@ -41,7 +41,7 @@ var insertInterviewer = (obj) => {
                 </div>
                 <div class="col-sm-2 font-weight-bold">
                     <div class="timeBox">
-                        ${time}
+                        ${firstTime}
                     </div>
                 </div>
                 <div class="col-sm-4 font-weight-bold">
@@ -75,7 +75,7 @@ var showAllForm = () => {
 
 var getAllForm = () => {
     //通过ajax获得数据
-    var d = ''
+    // var d = ''
     var method = 'get'
     var path = 'http://localhost:7000/api/form/all'
     var callback = (data) => {
@@ -85,7 +85,7 @@ var getAllForm = () => {
         insertAll(allForm)
     }
     ajax(method, path, callback)
-    return d
+    // return d
 }
 
 var __main = () => {
