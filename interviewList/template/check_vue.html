@@ -76,7 +76,7 @@
                                 应聘职位：
                             </div>
                             <div class="col-sm-2 font-weight-bold">
-                                面试时间：
+                                首轮面试时间：
                             </div>
                             <div class="col-sm-4 font-weight-bold">
                                 最新评价：
@@ -103,7 +103,7 @@
                                     </div>
                                     <div class="col-sm-2 font-weight-bold">
                                         <div class="timeBox">
-                                            {{item.lastJud.createTime}}
+                                            {{item.createTime}}
                                         </div>
                                     </div>
                                     <div class="col-sm-4 font-weight-bold">
@@ -114,7 +114,7 @@
                                     </div>
                                     <div class="col-sm-3">
                                         <button type="button" class="updateForm btn btn-primary" data-toggle="modal" data-target="#myModal" v-on:click="showAddModal">新增评价</button>
-                                        <button type="button" class="allJudge btn btn-info" data-toggle="modal" data-target="#myModal_forAll" v-on:click="showAllJudge">所有评价</button>
+                                        <button type="button" class="allJudge btn btn-info" data-toggle="modal" data-target="#myModal_forAll" v-on:click="showJudges">所有评价</button>
                                         <button type="button" class="delForm btn btn-danger" v-on:click="formDel">删除候选人</button>
                                     </div>
                                 </div>

@@ -41,13 +41,9 @@ var ib_v = new Vue({
             var id = Number(idbox.innerHTML)
             apiDelData(id, outer)
         },
-        showAllJudge: function() {
-            log('bbb')
-        },
         showAddModal: function(event) {
             var self = event.target
             var idbox = myClosest('.idBox', self)
-            var outer = myClosest('.detail', self)
             var id = Number(idbox.innerHTML)
             clearModal()
             insertJudgeModal(id)
@@ -57,8 +53,17 @@ var ib_v = new Vue({
             var newJudge = getJudgement(self)
             //ajax操作, 首先check相应id的form, 然后update, 并且在回调函数内将元素插入页面
             apiUpdateForm(newJudge)
-            // this.getAllForm()
         },
+        showJudges: function(event) {
+            var self = event.target
+            var idbox = myClosest('.idBox', self)
+            var id = Number(idbox.innerHTML)
+            clearModal()
+            //由该id查询数据, 获取所有评价
+            apiShowJudges(id)
+            //渲染到页面模态框中
+
+        }
     },
     mounted: function() {
         this.getAllForm()
@@ -161,4 +166,46 @@ var insertJudge_DOM = (newestJudge, dom) => {
         </div>
     `
     dom.innerHTML = t
+}
+
+var apiShowJudges = (id) => {
+    var path =  'http://localhost:7000/api/form/check' + id
+    var method = 'get'
+    ajax(method, path, (data) => {
+        var checkData = data
+        if (checkData.judgement == undefined) {
+            checkData.judgement = []
+        }
+        var items = checkData.judgement
+        var m = e('.modal-body-forAll')
+        m.innerHTML = ''
+        modalJudges(items)
+    })
+}
+
+var modalJudges = (items) => {
+    for (var i = 0; i < items.length; i++) {
+        var item = items[i]
+        modalJudge(item, i)
+    }
+}
+
+var modalJudge = (item, i) => {
+    var id = i
+    var author = item.author
+    var jud = item.jud
+    var time = new Date(item.createTime).toLocaleDateString()
+    var t = `
+        <div class="" data-id=${id}>
+            <div class="content text-center col-sm-8">
+                ${jud}
+            </div>
+            <div class="footer text-right col-sm-8">
+                <span class="timeBox">${time}</span>
+                <span class="nameBox">${author}</span>
+            </div>
+        </div>
+    `
+    var m = e('.modal-body-forAll')
+    m.insertAdjacentHTML('beforeend', t)
 }
