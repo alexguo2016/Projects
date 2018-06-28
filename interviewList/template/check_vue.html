@@ -27,168 +27,166 @@
                 }
             })
         </script> -->
-        <div class="myForm">
-            <div class="formTitle">
-                <nav class="navbar navbar-expand-sm bg-info navbar-dark">
-                <!-- Brand/logo -->
-                    <a class="navbar-brand" href="newInterview">
-                        <h1>西洋汇</h1>
-                        <!-- <span class="small">面试表格</span> -->
-                    </a>
+        <div class="" id = 'outerForm_Vue'>
+            <div class="myForm">
+                <div class="formTitle">
+                    <nav class="navbar navbar-expand-sm bg-info navbar-dark">
+                        <!-- Brand/logo -->
+                        <a class="navbar-brand" href="newInterview">
+                            <h1>西洋汇</h1>
+                            <!-- <span class="small">面试表格</span> -->
+                        </a>
 
-                    <!-- Links -->
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="newInterview">
-                                新增面试
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="check">
-                                查看候选人
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="check_vue">
-                                查看候选人-Vue版本
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <br>
-            <div class="formMain container">
-                <div class="interviewerStatus">
-                    <div class="title row">
-                        <div class="col-sm-12 mySection">
-                             <span class="sectionTitle">应聘情况</span>
-                        </div>
-                    </div>
-                    <div class="lables row">
-                        <div class="col-sm-1 font-weight-bold">
-                            id:
-                        </div>
-                        <div class="col-sm-1 font-weight-bold">
-                            姓名：
-                        </div>
-                        <div class="col-sm-1 font-weight-bold">
-                            应聘职位：
-                        </div>
-                        <div class="col-sm-2 font-weight-bold">
-                            面试时间：
-                        </div>
-                        <div class="col-sm-4 font-weight-bold">
-                            最新评价：
-                        </div>
-
-                    </div>
-                    <div class="interviewerBox" id = 'interBox_Vue'>
-                        <div class="" v-for="item in arr">
-                            <div class="row detail" >
-                                <div class="col-sm-1 font-weight-bold">
-                                    <div class="idBox">
-                                        {{item.id}}
-                                    </div>
-                                </div>
-                                <div class="col-sm-1 font-weight-bold">
-                                    <div class="nameBox">
-                                        {{item.normalInfos.name}}
-                                    </div>
-                                </div>
-                                <div class="col-sm-1 font-weight-bold">
-                                    <div class="careerBox">
-                                        {{item.jobObjected.position}}
-                                    </div>
-                                </div>
-                                <div class="col-sm-2 font-weight-bold">
-                                    <div class="timeBox">
-                                        {{item.lastJud.createTime}}
-                                    </div>
-                                </div>
-                                <div class="col-sm-4 font-weight-bold">
-                                    <div class="judgeBox">
-                                        <div class="text-left">{{item.lastJud.jud}}</div>
-                                        <div class="text-right">评价人:{{item.lastJud.author}}     时间:{{item.lastJud.createTime}}</div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <button type="button" class="updateForm btn btn-primary" data-toggle="modal" data-target="#myModal">新增评价</button>
-                                    <button type="button" class="allJudge btn btn-info" data-toggle="modal" data-target="#myModal_forAll">所有评价</button>
-                                    <button type="button" class="delForm btn btn-danger" v-on:click="formDel">删除候选人</button>
-                                </div>
+                        <!-- Links -->
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="newInterview">
+                                    新增面试
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="check">
+                                    查看候选人
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="check_vue">
+                                    查看候选人-Vue版本
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <br>
+                <div class="formMain container">
+                    <div class="interviewerStatus">
+                        <div class="title row">
+                            <div class="col-sm-12 mySection">
+                                <span class="sectionTitle">应聘情况</span>
                             </div>
                         </div>
+                        <div class="lables row">
+                            <div class="col-sm-1 font-weight-bold">
+                                id:
+                            </div>
+                            <div class="col-sm-1 font-weight-bold">
+                                姓名：
+                            </div>
+                            <div class="col-sm-1 font-weight-bold">
+                                应聘职位：
+                            </div>
+                            <div class="col-sm-2 font-weight-bold">
+                                面试时间：
+                            </div>
+                            <div class="col-sm-4 font-weight-bold">
+                                最新评价：
+                            </div>
 
+                        </div>
+                        <div class="interviewerBox" >
+                            <div class="" v-for="item in arr">
+                                <div class="row detail" >
+                                    <div class="col-sm-1 font-weight-bold">
+                                        <div class="idBox">
+                                            {{item.id}}
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-1 font-weight-bold">
+                                        <div class="nameBox">
+                                            {{item.normalInfos.name}}
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-1 font-weight-bold">
+                                        <div class="careerBox">
+                                            {{item.jobObjected.position}}
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2 font-weight-bold">
+                                        <div class="timeBox">
+                                            {{item.lastJud.createTime}}
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 font-weight-bold">
+                                        <div class="judgeBox">
+                                            <div class="text-left">{{item.lastJud.jud}}</div>
+                                            <div class="text-right">评价人:{{item.lastJud.author}}     时间:{{item.lastJud.createTime}}</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <button type="button" class="updateForm btn btn-primary" data-toggle="modal" data-target="#myModal" v-on:click="showAddModal">新增评价</button>
+                                        <button type="button" class="allJudge btn btn-info" data-toggle="modal" data-target="#myModal_forAll" v-on:click="showAllJudge">所有评价</button>
+                                        <button type="button" class="delForm btn btn-danger" v-on:click="formDel">删除候选人</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
+                <br>
             </div>
             <br>
-        </div>
-        <br>
 
-        <div class="container">
-        <!-- 模态框 为显示  增加评价 设置-->
-            <div class="modal fade text-center" id="myModal">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
+            <div class="container">
+                <!-- 模态框 为显示  增加评价 设置-->
+                <div class="modal fade text-center" id="myModal">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
 
-                    <!-- 模态框头部 -->
-                        <div class="modal-header">
-                        <h4 class="modal-title">请评价该候选人</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <!-- 模态框头部 -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">请评价该候选人</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- 模态框主体 -->
+                            <div class="modal-body">
+                                模态框内容..
+                            </div>
+
+                            <!-- 模态框底部 -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary judgeSumit" data-dismiss="modal" v-on:click="judgeSumit">确认</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                            </div>
+
                         </div>
-
-                    <!-- 模态框主体 -->
-                        <div class="modal-body">
-                        模态框内容..
-                        </div>
-
-                    <!-- 模态框底部 -->
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary judgeSumit" data-dismiss="modal">确认</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-                        </div>
-
                     </div>
                 </div>
             </div>
-        </div>
 
 
-        <div class="container">
-        <!-- 模态框2 为显示  所有评价而设置 -->
-            <div class="modal fade text-center" id="myModal_forAll">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
+            <div class="container">
+                <!-- 模态框2 为显示  所有评价而设置 -->
+                <div class="modal fade text-center" id="myModal_forAll">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
 
-                    <!-- 模态框头部 -->
-                        <div class="modal-header">
-                        <h4 class="modal-title">候选人的所有评价如下:</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <!-- 模态框头部 -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">候选人的所有评价如下:</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- 模态框主体 -->
+                            <div class="modal-body-forAll">
+
+                            </div>
+
+                            <!-- 模态框底部 -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary " data-dismiss="modal">确认</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                            </div>
+
                         </div>
-
-                    <!-- 模态框主体 -->
-                        <div class="modal-body-forAll">
-
-                        </div>
-
-                    <!-- 模态框底部 -->
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary " data-dismiss="modal">确认</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-                        </div>
-
                     </div>
                 </div>
             </div>
         </div>
 
         <script src="js/myTool.js" charset="utf-8"></script>
-        <!-- <script src="js/checkInterviewer.js" charset="utf-8"></script> -->
-        <!-- <script src="js/delForm.js" charset="utf-8"></script> -->
-        <!-- <script src="js/updataForm.js" charset="utf-8"></script> -->
-        <script src="js/delForm_vue.js" charset="utf-8"></script>
         <script src="js/checkInterviewer_vue.js" charset="utf-8"></script>
-        <script src="js/updataForm_vue.js" charset="utf-8"></script>
+        <!-- <script src="js/updataForm_vue.js" charset="utf-8"></script> -->
     </body>
 </html>

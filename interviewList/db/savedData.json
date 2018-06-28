@@ -122,6 +122,30 @@
         "author": "测试组员A",
         "jud": "测试测试",
         "createTime": "2018-06-24T14:02:17.943Z"
+      },
+      {
+        "id": 1,
+        "author": "vue 测试",
+        "jud": "vue 测试",
+        "createTime": "2018-06-28T09:20:07.729Z"
+      },
+      {
+        "id": 1,
+        "author": "测试",
+        "jud": "1234",
+        "createTime": "2018-06-28T09:20:42.337Z"
+      },
+      {
+        "id": 1,
+        "author": "asdf",
+        "jud": "asdzxc",
+        "createTime": "2018-06-28T09:24:18.970Z"
+      },
+      {
+        "id": 1,
+        "author": "fdgh ",
+        "jud": "dfgh",
+        "createTime": "2018-06-28T09:31:19.602Z"
       }
     ],
     "arrivalTime": "2018/6/24--21:45:12",
@@ -257,7 +281,7 @@
   },
   {
     "normalInfos": {
-      "name": "sdfghas dfg",
+      "name": "asdf ",
       "gender": "--",
       "nation": "",
       "native": "",
@@ -356,121 +380,12 @@
       "nature": "全职",
       "selfPosition": "培训生/实习生",
       "salary": "",
-      "arrivalTime": "2018/6/28--16:40:9"
+      "arrivalTime": "2018/6/28--17:15:54"
     },
     "declaration": false,
-    "createTime": "2018-6-28 16:40:15",
+    "createTime": "2018-6-28 17:16:01",
     "judgement": [],
-    "arrivalTime": "2018/6/28--16:40:9",
+    "arrivalTime": "2018/6/28--17:15:54",
     "id": 3
-  },
-  {
-    "normalInfos": {
-      "name": "sdfghas dfg",
-      "gender": "--",
-      "nation": "",
-      "native": "",
-      "birthday": "",
-      "tel": "",
-      "address": "",
-      "workYears": "",
-      "marry": "",
-      "birth": "",
-      "birthPlan": "--"
-    },
-    "eduExps": [
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "degree": "--",
-        "school": "",
-        "major": ""
-      },
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "degree": "--",
-        "school": "",
-        "major": ""
-      },
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "degree": "--",
-        "school": "",
-        "major": ""
-      }
-    ],
-    "workExps": [
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "workPlace": "",
-        "department": "",
-        "workStatus": "--",
-        "salary": "",
-        "linkman": ""
-      },
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "workPlace": "",
-        "department": "",
-        "workStatus": "--",
-        "salary": "",
-        "linkman": ""
-      },
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "workPlace": "",
-        "department": "",
-        "workStatus": "--",
-        "salary": "",
-        "linkman": ""
-      },
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "workPlace": "",
-        "department": "",
-        "workStatus": "--",
-        "salary": "",
-        "linkman": ""
-      }
-    ],
-    "famiStatus": [
-      {
-        "relationship": "",
-        "name": "",
-        "career": "",
-        "tel": ""
-      },
-      {
-        "relationship": "",
-        "name": "",
-        "career": "",
-        "tel": ""
-      }
-    ],
-    "jobObjected": {
-      "position": "",
-      "nature": "全职",
-      "selfPosition": "培训生/实习生",
-      "salary": "",
-      "arrivalTime": "2018/6/28--16:40:9"
-    },
-    "declaration": false,
-    "createTime": "2018-6-28 16:40:21",
-    "judgement": [],
-    "arrivalTime": "2018/6/28--16:40:9",
-    "id": 6
   }
 ]
