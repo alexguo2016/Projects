@@ -9,8 +9,24 @@
           <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
           <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
           <link rel="stylesheet" href="css/InterviewForm.css">
+          <!-- 加入Vue.js -->
+          <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
     </head>
     <body>
+        <!-- 测试Vue是否可用 -->
+        <!-- <div class="" id = 'app1'>
+            <input v-model='testInput'>
+            <span>{{testInput}}</span>
+        </div>
+        <script type="text/javascript">
+            var app1 = new Vue({
+                el: '#app1',
+                data: {
+                    testInput: ''
+                }
+            })
+        </script> -->
         <div class="myForm">
             <div class="formTitle">
                 <nav class="navbar navbar-expand-sm bg-info navbar-dark">
@@ -66,7 +82,7 @@
                         </div>
 
                     </div>
-                    <div class="interviewerBox"></div>
+                    <div class="interviewerBox" id = 'interBox_Vue'></div>
                 </div>
             </div>
             <br>
@@ -131,8 +147,10 @@
         </div>
 
         <script src="js/myTool.js" charset="utf-8"></script>
-        <script src="js/checkInterviewer.js" charset="utf-8"></script>
+        <!-- <script src="js/checkInterviewer.js" charset="utf-8"></script> -->
         <script src="js/delForm.js" charset="utf-8"></script>
-        <script src="js/updataForm.js" charset="utf-8"></script>
+        <!-- <script src="js/updataForm.js" charset="utf-8"></script> -->
+        <script src="js/checkInterviewer_vue.js" charset="utf-8"></script>
+        <script src="js/updataForm_vue.js" charset="utf-8"></script>
     </body>
 </html>
