@@ -57,6 +57,7 @@ var ib_v = new Vue({
             var newJudge = getJudgement(self)
             //ajax操作, 首先check相应id的form, 然后update, 并且在回调函数内将元素插入页面
             apiUpdateForm(newJudge)
+            // this.getAllForm()
         },
     },
     mounted: function() {
@@ -129,15 +130,35 @@ var apiUpdateForm = (newJudge) => {
 }
 
 var updateNewestJudge = (newestJudge) => {
-    log('updateNewestJudge')
     var item = newestJudge
     var id = item.id
     var forms = es('.detail')
     for (var i = 0; i < forms.length; i++) {
         var f = forms[i]
-        if (f.dataset.id == id) {
+        var idBox = myFind('.idBox',f)
+        var target_id = Number(idBox.innerHTML)
+        if (target_id == id) {
             var target = myFind('.judgeBox', f)
             insertJudge_DOM(newestJudge, target)
         }
     }
+}
+
+var insertJudge_DOM = (newestJudge, dom) => {
+    var item = newestJudge
+    var author = item.author
+    var jud = item.jud
+    var date = new Date(item.createTime)
+    var d = date.toLocaleDateString()
+    var h = date.getHours()
+    var m = date.getMinutes()
+    var s = date.getSeconds()
+    var time = `${d}--${h}:${m}:${s}`
+    var t = `
+        <div>
+            <div class="text-left">${jud}</div>
+            <div class="text-right">评价人:${author}     时间:${time}</div>
+        </div>
+    `
+    dom.innerHTML = t
 }
