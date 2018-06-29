@@ -14,3 +14,7 @@
 接下来演示怎么 添加评价  查看所有评价  删除候选人
 
 ![image](https://github.com/alexguo2016/Projects/blob/master/interviewList/添加评价-查看所有评价-删除候选人.gif)
+
+Vue.js的前端页面
+
+![image](https://github.com/alexguo2016/Projects/blob/master/interviewList/Vue版本页面.gif)
