@@ -1,6 +1,8 @@
 面试信息页面.
 后端使用node.js实现, 前端使用原生JavaScript实现.
 
+2018-6-28 增加一个Vue.js实现的前端页面, 功能和使用原生JavaScript写的一致.
+
 启动服务器
 
 ![image](https://github.com/alexguo2016/Projects/blob/master/interviewList/启动.gif)
