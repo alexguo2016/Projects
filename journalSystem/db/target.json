@@ -1,0 +1,17 @@
+[
+    {
+        "target": "target1",
+        "degree": 50%,
+        "relatedItem": [
+            1, 3, 4
+        ],
+        "keywords": [
+            "test",
+            "javascript",
+            "C++",
+        ],
+        "beginDate": "2018-9-9",
+        "endDate": "",
+        "id": 1
+    }
+]
