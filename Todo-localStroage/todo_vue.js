@@ -131,15 +131,18 @@ var app = new Vue({
             <header>
             <h1>My todos</h1>
             <input id = 'todo-input' class = 'new-todo' type="text"
-            v-model="inputText"
+            v-model.lazy="inputText"
             placeholder="what to do?" />
             <button class = 'addBtn' type="button">Add todo</button>
             <button class = 'clearDone' type="button">clearDone</button>
             </header>
         </div>
-        <todo-list v-for="todo in todos" v-bind:todo="todo"></todo-list>
+        <ul class="items">
+            <todo-list v-for="todo in todos" v-bind:todo="todo"></todo-list>
+        </ul>
     </div>
     `,
+    
     components: {
         'todo-list': todoList,
     }
