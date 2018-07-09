@@ -41,6 +41,32 @@ var modalAll = {
 }
 
 var modalNewest = {
+    props: ['id'],
+    data: function() {
+        return {
+            'judText': '',
+            'judMan': '',
+        }
+    },
+    computed: {
+        'info': function() {
+            var o = {
+                'id': this.id,
+                'judMan': this.judMan,
+                'judText': this.judText,
+            }
+            return o
+        }
+    },
+    methods: {
+        newModelInfos: function() {
+            console.log('this.jud', this.info.judText, this.info.judMan)
+        },
+        clearInfo: function() {
+            this.judText = ''
+            this.judMan = ''
+        },
+    },
     template: `
         <div class="container">
             <!-- 模态框 为显示  增加评价 设置-->
@@ -56,15 +82,27 @@ var modalNewest = {
 
                         <!-- 模态框主体 -->
                         <div class="modal-body">
-                            模态框内容..
+                            <div class="outerModal">
+                                <textarea class="" rows="20" cols="90"
+                                v-model="judText"
+                                 ></textarea>
+                                <div class="">
+                                    <span>评价人</span>
+                                    <input type="text" v-model="judMan">
+                                </div>
+                            </div>
                         </div>
 
                         <!-- 模态框底部 -->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary judgeSumit" data-dismiss="modal"
-
+                            v-on:click="$emit('add-emit', info)"
+                            v-on:click="clearInfo"
+                            v-bind:info="info"
                             >确认</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                            v-on:click="clearInfo"
+                            >关闭</button>
                         </div>
 
                     </div>
@@ -100,7 +138,7 @@ var myLables = {
 var interviewerBox = {
     template: `
         <div class="interviewerBox" >
-            <div class="" v-for="item in arr">
+            <div class="" v-for="(item, index) in arr">
             <div class="row detail" >
                 <div class="col-sm-1 font-weight-bold">
                     <div class="idBox">
@@ -124,13 +162,13 @@ var interviewerBox = {
                 </div>
                 <div class="col-sm-4 font-weight-bold">
                     <div class="judgeBox">
-                        <div class="text-left">{{item.lastJud.jud}}</div>
-                        <div class="text-right">评价人:{{item.lastJud.author}}     时间:{{item.lastJud.createTime | myTimeFormat}}</div>
+                        <div class="text-left">{{allLastjudge[index].jud}}</div>
+                        <div class="text-right">评价人:{{allLastjudge[index].author}}     时间:{{allLastjudge[index].createTime | myTimeFormat}}</div>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <button type="button" class="updateForm btn btn-primary" data-toggle="modal" data-target="#myModal"
-                    v-on:click="$emit('add-emit', item.id)"
+                    v-on:click="$emit('show-modal', item.id)"
                     >新增评价</button>
                     <button type="button" class="allJudge btn btn-info" data-toggle="modal" data-target="#myModal_forAll"
                     v-on:click="$emit('show-all-emit', item.id)"
@@ -142,9 +180,11 @@ var interviewerBox = {
             </div>
         </div>
     `,
-    props: ['arr'],
+    props: ['arr', 'allLastjudge'],
     data: function() {
-        return ''
+        return {
+            testData: ''
+        }
     }
 }
 
@@ -205,9 +245,30 @@ var app = new Vue({
     el: '#outerForm_Vue',
     data: {
         arr: '',
-        allJudge: '',
+        allJudge: [],
         newJudge: '',
         id: '',
+    },
+    computed: {
+        allLastjudge: function() {
+            var judArr = []
+            for (var i = 0; i < this.arr.length; i++) {
+                var item = this.arr[i].judgement
+                var lastJud = ''
+                if (item == undefined) {
+                    lastJud = {
+                        'id': '',
+                        'author': '',
+                        'jud': '',
+                        'createTime': ''
+                    }
+                } else {
+                    lastJud = item[item.length - 1]
+                }
+                judArr.push(lastJud)
+            }
+            return judArr
+        }
     },
     methods: {
         getAllForm: function() {
@@ -217,22 +278,30 @@ var app = new Vue({
             var that = this
             var callback = (data) => {
                 that.arr = data
-                for (var i = 0; i < data.length; i++) {
-                    var jud = that.arr[i].judgement
-                    var last = jud.length - 1
-                    if (last >= 0) {
-                        // jud[last].createTime = that.formatTime(jud[last].createTime)
-                        jud[last].createTime = jud[last].createTime
-                    } else {
-                        jud[last] = {}
-                    }
-                    that.arr[i].lastJud = jud[last]
-                }
             }
             ajax(method, path, callback)
         },
         addEmit: function(input) {
-            console.log('add input-->', input)
+            var o = {
+                'id': input.id,
+                'author': input.judMan,
+                'jud': input.judText,
+                'createTime': new Date()
+            }
+            for (var i = 0; i < this.arr.length; i++) {
+                var item = this.arr[i]
+                if (item.id == input.id) {
+                    item.judgement.push(o)
+                    this.arr.splice(i, 1, item)
+                }
+            }
+            //通过ajax发起修改数据库的请求
+            apiUpdateForm(o)
+
+        },
+        showModal: function(input) {
+            // console.log('showModal')
+            this.id = input
         },
         showAllEmit: function(input) {
             for (var i = 0; i < this.arr.length; i++) {
@@ -243,38 +312,16 @@ var app = new Vue({
             }
         },
         delEmit: function(input) {
-            console.log('delEmit-->', input)
+            for (var i = 0; i < this.arr.length; i++) {
+                var item = this.arr[i]
+                if (item.id == input) {
+                    //使用ajax删除数据库中的项目
+                    apiDelData(input)
+                    //页面删除项目
+                    this.arr.splice(i, 1)
+                }
+            }
         },
-        // formDel: function(event) {
-        //     var self = event.target
-        //     var idbox = myClosest('.idBox', self)
-        //     var outer = myClosest('.detail', self)
-        //     var id = Number(idbox.innerHTML)
-        //     apiDelData(id, outer)
-        // },
-        // showAddModal: function(event) {
-        //     var self = event.target
-        //     var idbox = myClosest('.idBox', self)
-        //     var id = Number(idbox.innerHTML)
-        //     clearModal()
-        //     insertJudgeModal(id)
-        // },
-        // judgeSumit: function(event) {
-        //     var self = event.target
-        //     var newJudge = getJudgement(self)
-        //     //ajax操作, 首先check相应id的form, 然后update, 并且在回调函数内将元素插入页面
-        //     apiUpdateForm(newJudge)
-        // },
-        // showJudges: function(event) {
-        //     var self = event.target
-        //     var idbox = myClosest('.idBox', self)
-        //     var id = Number(idbox.innerHTML)
-        //     clearModal()
-        //     //由该id查询数据, 获取所有评价
-        //     apiShowJudges(id)
-        //     //渲染到页面模态框中
-        //
-        // }
     },
 
     mounted: function() {
@@ -298,18 +345,24 @@ var app = new Vue({
                 <div class="formMain container">
                     <div class="interviewerStatus">
                         <my-page-title></my-page-title>
+
                         <my-lables></my-lables>
-                        <my-interviewer-box v-bind:arr="arr"  v-on:add-emit="addEmit"
+
+                        <my-interviewer-box
+                        v-bind:arr="arr"
+                        v-bind:allLastjudge="allLastjudge"
                         v-on:show-all-emit="showAllEmit"
                         v-on:del-emit="delEmit"
+                        v-on:show-modal="showModal"
                         ></my-interviewer-box>
+
                     </div>
                 </div>
                 <br>
             </div>
             <br>
 
-            <my-modal-newest></my-modal-newest>
+            <my-modal-newest v-on:add-emit="addEmit" v-bind:id="id"></my-modal-newest>
 
             <my-modal-all v-bind:items="allJudge"></my-modal-all>
 
@@ -317,142 +370,29 @@ var app = new Vue({
     `
 })
 
-// var apiDelData = function(id, outer) {
-//     var method = 'get'
-//     var path = 'http://localhost:7000/api/form/del' + id
-//     var callback = () => {
-//         outer.remove()
-//     }
-//     ajax(method, path, callback)
-// }
-//
-// var clearModal = () => {
-//     var m = e('.modal-body')
-//     m.innerHTML = ''
-// }
-//
-// var insertJudgeModal = (id) => {
-//     var t = `
-//         <div class="outerModal" data-id=${id}>
-//             <textarea class="" rows="20" cols="90" ></textarea>
-//             <div class="">
-//                 <span>评价人</span>
-//                 <input type="text" >
-//             </div>
-//         </div>
-//     `
-//     var m = e('.modal-body')
-//     m.insertAdjacentHTML('beforeend', t)
-// }
-//
-// var getJudgement = (obj) => {
-//     var self = obj
-//     var o = {}
-//     var outer = myClosest('.outerModal', self)
-//     o.id = Number(outer.dataset.id)
-//
-//     var authorBox = myClosest('input', self)
-//     o.author = authorBox.value
-//
-//     var judgementBox = myClosest('textarea', self)
-//     o.jud = judgementBox.value
-//
-//     o.createTime = new Date()
-//     return o
-// }
-//
-// var apiUpdateForm = (newJudge) => {
-//     var id = newJudge.id
-//     var path =  'http://localhost:7000/api/form/check' + id
-//     var method = 'get'
-//     ajax(method, path, (data) => {
-//         var checkData = data
-//         if (checkData.judgement == undefined) {
-//             checkData.judgement = []
-//         }
-//         checkData.judgement.push(newJudge)
-//         var inner_method = 'post'
-//         var inner_path =  'http://localhost:7000/api/form/update' + id
-//         ajax(inner_method, inner_path, (d) => {
-//             var item = d.judgement
-//             var newestJudge = item[item.length - 1]
-//             updateNewestJudge(newestJudge)
-//         }, checkData)
-//     })
-// }
-//
-// var updateNewestJudge = (newestJudge) => {
-//     var item = newestJudge
-//     var id = item.id
-//     var forms = es('.detail')
-//     for (var i = 0; i < forms.length; i++) {
-//         var f = forms[i]
-//         var idBox = myFind('.idBox',f)
-//         var target_id = Number(idBox.innerHTML)
-//         if (target_id == id) {
-//             var target = myFind('.judgeBox', f)
-//             insertJudge_DOM(newestJudge, target)
-//         }
-//     }
-// }
-//
-// var insertJudge_DOM = (newestJudge, dom) => {
-//     var item = newestJudge
-//     var author = item.author
-//     var jud = item.jud
-//     var date = new Date(item.createTime)
-//     var d = date.toLocaleDateString()
-//     var h = date.getHours()
-//     var m = date.getMinutes()
-//     var s = date.getSeconds()
-//     var time = `${d}--${h}:${m}:${s}`
-//     var t = `
-//         <div>
-//             <div class="text-left">${jud}</div>
-//             <div class="text-right">评价人:${author}     时间:${time}</div>
-//         </div>
-//     `
-//     dom.innerHTML = t
-// }
-//
-// var apiShowJudges = (id) => {
-//     var path =  'http://localhost:7000/api/form/check' + id
-//     var method = 'get'
-//     ajax(method, path, (data) => {
-//         var checkData = data
-//         if (checkData.judgement == undefined) {
-//             checkData.judgement = []
-//         }
-//         var items = checkData.judgement
-//         var m = e('.modal-body-forAll')
-//         m.innerHTML = ''
-//         modalJudges(items)
-//     })
-// }
-//
-// var modalJudges = (items) => {
-//     for (var i = 0; i < items.length; i++) {
-//         var item = items[i]
-//         modalJudge(item, i)
-//     }
-// }
-//
-// var modalJudge = (item, i) => {
-//     var id = i
-//     var author = item.author
-//     var jud = item.jud
-//     var time = new Date(item.createTime).toLocaleDateString()
-//     var t = `
-        // <div class="" data-id=${id}>
-        //     <div class="content text-center col-sm-8">
-        //         ${jud}
-        //     </div>
-        //     <div class="footer text-right col-sm-8">
-        //         <span class="timeBox">${time}</span>
-        //         <span class="nameBox">${author}</span>
-        //     </div>
-        // </div>
-//     `
-//     var m = e('.modal-body-forAll')
-//     m.insertAdjacentHTML('beforeend', t)
-// }
+var apiDelData = function(id) {
+    var method = 'get'
+    var path = 'http://localhost:7000/api/form/del' + id
+    var callback = () => {
+        console.log('delete')
+    }
+    ajax(method, path, callback)
+}
+
+var apiUpdateForm = (newJudge) => {
+    var id = newJudge.id
+    var path =  'http://localhost:7000/api/form/check' + id
+    var method = 'get'
+    ajax(method, path, (data) => {
+        var checkData = data
+        if (checkData.judgement == undefined) {
+            checkData.judgement = []
+        }
+        checkData.judgement.push(newJudge)
+        var inner_method = 'post'
+        var inner_path =  'http://localhost:7000/api/form/update' + id
+        ajax(inner_method, inner_path, (d) => {
+
+        }, checkData)
+    })
+}

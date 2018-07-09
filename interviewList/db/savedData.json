@@ -122,259 +122,27 @@
         "author": "老司机A",
         "jud": "真~老司机",
         "createTime": "2018-06-28T04:55:56.880Z"
+      },
+      {
+        "id": 2,
+        "author": "sss",
+        "jud": "fff",
+        "createTime": "2018-07-09T11:55:19.255Z"
+      },
+      {
+        "id": 2,
+        "author": "fefadfh",
+        "jud": "adfef",
+        "createTime": "2018-07-09T11:56:50.823Z"
+      },
+      {
+        "id": 2,
+        "author": "sdf",
+        "jud": "fff",
+        "createTime": "2018-07-09T11:58:18.975Z"
       }
     ],
     "arrivalTime": "2018/6/28--12:51:7",
     "id": 2
-  },
-  {
-    "normalInfos": {
-      "name": "asdf ",
-      "gender": "--",
-      "nation": "",
-      "native": "",
-      "birthday": "",
-      "tel": "",
-      "address": "",
-      "workYears": "",
-      "marry": "",
-      "birth": "",
-      "birthPlan": "--"
-    },
-    "eduExps": [
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "degree": "--",
-        "school": "",
-        "major": ""
-      },
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "degree": "--",
-        "school": "",
-        "major": ""
-      },
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "degree": "--",
-        "school": "",
-        "major": ""
-      }
-    ],
-    "workExps": [
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "workPlace": "",
-        "department": "",
-        "workStatus": "--",
-        "salary": "",
-        "linkman": ""
-      },
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "workPlace": "",
-        "department": "",
-        "workStatus": "--",
-        "salary": "",
-        "linkman": ""
-      },
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "workPlace": "",
-        "department": "",
-        "workStatus": "--",
-        "salary": "",
-        "linkman": ""
-      },
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "workPlace": "",
-        "department": "",
-        "workStatus": "--",
-        "salary": "",
-        "linkman": ""
-      }
-    ],
-    "famiStatus": [
-      {
-        "relationship": "",
-        "name": "",
-        "career": "",
-        "tel": ""
-      },
-      {
-        "relationship": "",
-        "name": "",
-        "career": "",
-        "tel": ""
-      }
-    ],
-    "jobObjected": {
-      "position": "",
-      "nature": "全职",
-      "selfPosition": "培训生/实习生",
-      "salary": "",
-      "arrivalTime": "2018/6/28--17:15:54"
-    },
-    "declaration": false,
-    "createTime": "2018-6-28 17:16:01",
-    "judgement": [
-      {
-        "id": 3,
-        "author": "ABC",
-        "jud": "第一次评价",
-        "createTime": "2018-06-28T12:50:56.356Z"
-      },
-      {
-        "id": 3,
-        "author": "狗肉馆",
-        "jud": "电饭锅",
-        "createTime": "2018-06-28T12:52:41.052Z"
-      },
-      {
-        "id": 3,
-        "author": "法国红酒",
-        "jud": "法国红酒",
-        "createTime": "2018-06-28T12:53:43.804Z"
-      }
-    ],
-    "arrivalTime": "2018/6/28--17:15:54",
-    "id": 3
-  },
-  {
-    "normalInfos": {
-      "name": "测试2",
-      "gender": "--",
-      "nation": "",
-      "native": "",
-      "birthday": "",
-      "tel": "",
-      "address": "",
-      "workYears": "",
-      "marry": "",
-      "birth": "",
-      "birthPlan": "--"
-    },
-    "eduExps": [
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "degree": "--",
-        "school": "",
-        "major": ""
-      },
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "degree": "--",
-        "school": "",
-        "major": ""
-      },
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "degree": "--",
-        "school": "",
-        "major": ""
-      }
-    ],
-    "workExps": [
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "workPlace": "",
-        "department": "",
-        "workStatus": "--",
-        "salary": "",
-        "linkman": ""
-      },
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "workPlace": "",
-        "department": "",
-        "workStatus": "--",
-        "salary": "",
-        "linkman": ""
-      },
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "workPlace": "",
-        "department": "",
-        "workStatus": "--",
-        "salary": "",
-        "linkman": ""
-      },
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "workPlace": "",
-        "department": "",
-        "workStatus": "--",
-        "salary": "",
-        "linkman": ""
-      }
-    ],
-    "famiStatus": [
-      {
-        "relationship": "",
-        "name": "",
-        "career": "",
-        "tel": ""
-      },
-      {
-        "relationship": "",
-        "name": "",
-        "career": "",
-        "tel": ""
-      }
-    ],
-    "jobObjected": {
-      "position": "",
-      "nature": "全职",
-      "selfPosition": "培训生/实习生",
-      "salary": "",
-      "arrivalTime": "2018/6/28--20:53:57"
-    },
-    "declaration": false,
-    "createTime": "2018-6-28 20:54:29",
-    "judgement": [
-      {
-        "id": 4,
-        "author": "飞飞飞",
-        "jud": "呃呃呃",
-        "createTime": "2018-06-28T12:54:40.044Z"
-      },
-      {
-        "id": 4,
-        "author": "asdf",
-        "jud": "行政处罚",
-        "createTime": "2018-06-28T12:55:15.708Z"
-      }
-    ],
-    "arrivalTime": "2018/6/28--20:53:57",
-    "id": 4
   }
 ]
