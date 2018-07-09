@@ -144,5 +144,114 @@
     ],
     "arrivalTime": "2018/6/28--12:51:7",
     "id": 2
+  },
+  {
+    "normalInfos": {
+      "name": "ssdfg",
+      "gender": "--",
+      "nation": "",
+      "native": "",
+      "birthday": "",
+      "tel": "",
+      "address": "",
+      "workYears": "",
+      "marry": "",
+      "birth": "",
+      "birthPlan": "--"
+    },
+    "eduExps": [
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "degree": "--",
+        "school": "",
+        "major": ""
+      },
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "degree": "--",
+        "school": "",
+        "major": ""
+      },
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "degree": "--",
+        "school": "",
+        "major": ""
+      }
+    ],
+    "workExps": [
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "workPlace": "",
+        "department": "",
+        "workStatus": "--",
+        "salary": "",
+        "linkman": ""
+      },
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "workPlace": "",
+        "department": "",
+        "workStatus": "--",
+        "salary": "",
+        "linkman": ""
+      },
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "workPlace": "",
+        "department": "",
+        "workStatus": "--",
+        "salary": "",
+        "linkman": ""
+      },
+      {
+        "studyBegin": "",
+        "studyEnd": "",
+        "nature": "--",
+        "workPlace": "",
+        "department": "",
+        "workStatus": "--",
+        "salary": "",
+        "linkman": ""
+      }
+    ],
+    "famiStatus": [
+      {
+        "relationship": "",
+        "name": "",
+        "career": "",
+        "tel": ""
+      },
+      {
+        "relationship": "",
+        "name": "",
+        "career": "",
+        "tel": ""
+      }
+    ],
+    "jobObjected": {
+      "position": "",
+      "nature": "全职",
+      "selfPosition": "培训生/实习生",
+      "salary": "",
+      "arrivalTime": "2018/7/9--19:59:31"
+    },
+    "declaration": false,
+    "createTime": "2018-7-9 19:59:37",
+    "judgement": [],
+    "arrivalTime": "2018/7/9--19:59:31",
+    "id": 3
   }
 ]

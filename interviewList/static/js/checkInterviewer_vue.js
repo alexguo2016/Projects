@@ -232,6 +232,9 @@ var formTitle = {
 }
 
 Vue.filter('myTimeFormat', function(t) {
+    if (t == '暂无') {
+        return t
+    }
     var date = new Date(t)
     var d = date.toLocaleDateString()
     var h = date.getHours()
@@ -255,12 +258,12 @@ var app = new Vue({
             for (var i = 0; i < this.arr.length; i++) {
                 var item = this.arr[i].judgement
                 var lastJud = ''
-                if (item == undefined) {
+                if (item.length < 1) {
                     lastJud = {
-                        'id': '',
-                        'author': '',
-                        'jud': '',
-                        'createTime': ''
+                        'id': item.id,
+                        'author': '暂无',
+                        'jud': '暂无',
+                        'createTime': '暂无'
                     }
                 } else {
                     lastJud = item[item.length - 1]
