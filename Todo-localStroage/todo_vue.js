@@ -42,14 +42,14 @@ var app = new Vue({
         //增加一个todo
         addTodo: function() {
             var text = this.inputText
+            if (text == '') {
+                return
+            }
             var lastItem = this.todos[this.todos.length - 1]
             if (lastItem != undefined) {
                 var lastId = lastItem.id
             } else {
                 lastId = -1
-            }
-            if (text == '') {
-                return
             }
             var obj = {
                 "text": text,
@@ -84,6 +84,8 @@ var app = new Vue({
                 }
             }
         },
+
+
         //清除所有被标记为done的todo
         clearDone: function() {
             var arr = []
@@ -142,7 +144,7 @@ var app = new Vue({
         </ul>
     </div>
     `,
-    
+
     components: {
         'todo-list': todoList,
     }
