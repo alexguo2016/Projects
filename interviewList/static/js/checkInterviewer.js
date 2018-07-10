@@ -18,7 +18,7 @@ var insertInterviewer = (obj) => {
     } else {
         var item = {}
         var author = '暂无'
-        var jud = ''
+        var jud = '暂无'
         var time = '暂无'
     }
     var t = `
@@ -75,7 +75,6 @@ var showAllForm = () => {
 
 var getAllForm = () => {
     //通过ajax获得数据
-    // var d = ''
     var method = 'get'
     var path = 'http://localhost:7000/api/form/all'
     var callback = (data) => {
@@ -85,7 +84,6 @@ var getAllForm = () => {
         insertAll(allForm)
     }
     ajax(method, path, callback)
-    // return d
 }
 
 var __main = () => {

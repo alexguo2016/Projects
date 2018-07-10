@@ -1,153 +1,7 @@
 [
   {
     "normalInfos": {
-      "name": "候选人A",
-      "gender": "男",
-      "nation": "汉族",
-      "native": "北京密云",
-      "birthday": "1990-12-05",
-      "tel": "13145214557",
-      "address": "北京密云水库底",
-      "workYears": "5",
-      "marry": "已婚",
-      "birth": "未育",
-      "birthPlan": "一年内有生育计划"
-    },
-    "eduExps": [
-      {
-        "studyBegin": "2009-09-01",
-        "studyEnd": "2013-07-01",
-        "nature": "公立",
-        "degree": "本科",
-        "school": "北京大学",
-        "major": "哲学"
-      },
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "degree": "--",
-        "school": "",
-        "major": ""
-      },
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "degree": "--",
-        "school": "",
-        "major": ""
-      }
-    ],
-    "workExps": [
-      {
-        "studyBegin": "2013-07-02",
-        "studyEnd": "2018-06-02",
-        "nature": "国有企业",
-        "workPlace": "北京密云水库",
-        "department": "水库长",
-        "workStatus": "离职",
-        "salary": "50000",
-        "linkman": "水库长B/18845674658"
-      },
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "workPlace": "",
-        "department": "",
-        "workStatus": "--",
-        "salary": "",
-        "linkman": ""
-      },
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "workPlace": "",
-        "department": "",
-        "workStatus": "--",
-        "salary": "",
-        "linkman": ""
-      },
-      {
-        "studyBegin": "",
-        "studyEnd": "",
-        "nature": "--",
-        "workPlace": "",
-        "department": "",
-        "workStatus": "--",
-        "salary": "",
-        "linkman": ""
-      }
-    ],
-    "famiStatus": [
-      {
-        "relationship": "父",
-        "name": "候选人A的父亲",
-        "career": "公务员",
-        "tel": "18025412589"
-      },
-      {
-        "relationship": "母",
-        "name": "候选人B的母亲",
-        "career": "公务员",
-        "tel": "13452155487"
-      }
-    ],
-    "jobObjected": {
-      "position": "薪酬管理",
-      "nature": "全职",
-      "selfPosition": "总监/CTO",
-      "salary": "50000",
-      "arrivalTime": "2018/6/28--12:51:7"
-    },
-    "declaration": true,
-    "createTime": "2018-6-28 12:55:04",
-    "judgement": [
-      {
-        "id": 2,
-        "author": "某迷妹",
-        "jud": "好帅气!",
-        "createTime": "2018-06-28T04:55:27.929Z"
-      },
-      {
-        "id": 2,
-        "author": "某迷妹B",
-        "jud": "炒鸡帅",
-        "createTime": "2018-06-28T04:55:41.576Z"
-      },
-      {
-        "id": 2,
-        "author": "老司机A",
-        "jud": "真~老司机",
-        "createTime": "2018-06-28T04:55:56.880Z"
-      },
-      {
-        "id": 2,
-        "author": "sss",
-        "jud": "fff",
-        "createTime": "2018-07-09T11:55:19.255Z"
-      },
-      {
-        "id": 2,
-        "author": "fefadfh",
-        "jud": "adfef",
-        "createTime": "2018-07-09T11:56:50.823Z"
-      },
-      {
-        "id": 2,
-        "author": "sdf",
-        "jud": "fff",
-        "createTime": "2018-07-09T11:58:18.975Z"
-      }
-    ],
-    "arrivalTime": "2018/6/28--12:51:7",
-    "id": 2
-  },
-  {
-    "normalInfos": {
-      "name": "ssdfg",
+      "name": "测试用例a",
       "gender": "--",
       "nation": "",
       "native": "",
@@ -246,12 +100,19 @@
       "nature": "全职",
       "selfPosition": "培训生/实习生",
       "salary": "",
-      "arrivalTime": "2018/7/9--19:59:31"
+      "arrivalTime": "一个月以内"
     },
     "declaration": false,
-    "createTime": "2018-7-9 19:59:37",
-    "judgement": [],
-    "arrivalTime": "2018/7/9--19:59:31",
-    "id": 3
+    "createTime": "2018-7-10 18:16:35",
+    "judgement": [
+      {
+        "id": 1,
+        "author": "tester",
+        "jud": "test test teste",
+        "createTime": "2018-07-10T10:20:57.161Z"
+      }
+    ],
+    "arrivalTime": "2018/7/10--18:16:21",
+    "id": 1
   }
 ]

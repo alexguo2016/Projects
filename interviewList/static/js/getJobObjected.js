@@ -19,8 +19,8 @@ var getSalary = (obj) => {
     return value
 }
 
-var getArrivalTime = (obj) => {
-    var value = getFromDOM_ObjectVersion(obj, '.arrivalTimeBox', 'select')
+var getJobTime = (obj) => {
+    var value = getFromDOM_ObjectVersion(obj, '.jobTimeBox', 'select')
     return value
 }
 
@@ -31,7 +31,7 @@ var getJobObjected = () => {
         nature: getNature(obj),
         selfPosition: getSelfPosition(obj),
         salary: getSalary(obj),
-        arrivalTime: getArrivalTime(obj),
+        arrivalTime: getJobTime(obj),
     }
     return o
 }
