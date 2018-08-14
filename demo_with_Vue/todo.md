@@ -29,7 +29,7 @@
             1. 难度不能确定
             2. 时间难以控制
 1. 确定技术
-    - Vue作为JS技术， Bootstrap作为自适应框架
+    - Vue作为JS技术， Bootstrap作为自适应框架, 或者可以使用ElementUI, Vue配套的UI
         - 基本技术已经了解
         - 需要学习便捷一点的工具， 例如vuex， nuxt， webpack等等
     - 小程序的独立功能， 模块或页面， 例如用户反馈页面
