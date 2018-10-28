@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>originalJavaScript</title>
+    <style type='text/css'>
+        .box {
+            background-color: aquamarine;
+        }
+
+        .box-button {
+            background-color: brown;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class='box' id='box'>
+        this is a button, when you click, the counter will increase
+        <button class='box-button' id='control'>0</button>
+    </div>
+
+    <script>
+        // var button = document.querySelector('#control')
+        // console.log(button)
+        // button.innerHTML = 233
+
+        var find = function(str) {
+            return document.querySelector(str)
+        }
+        
+        var counter = 0
+        var counterB = 7
+        var button = find('#control')
+        button.onclick = function() {
+            counter += 1
+            button.innerHTML = counter
+        }
+    </script>
+</body>
+</html>
